@@ -10,10 +10,7 @@ public class ModChallenge {
         c /= 100;
         d /= 1000;
 
-        System.out.println("First digit: " + d);
-        System.out.println("Second digit: " + c);
-        System.out.println("Third digit: " + b);
-        System.out.println("Fourth digit: " + a);
+        System.out.println("First: " + d + "\nSecond: " + c + "\nThird: " + b + "\nFourth: " + a);
 
     }
 }
