@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5d920a8-d872-4f48-a6b9-7070667e667b" name="Changes" comment="mv ModChallenge &gt; Functions.modChallenge">
+    <list default="true" id="a5d920a8-d872-4f48-a6b9-7070667e667b" name="Changes" comment="did math">
+      <change afterPath="$PROJECT_DIR$/src/Unit1Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +31,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/rae/Documents/mods/intellij/Classwork/src",
+    "settings.editor.selected.configurable": "preferences.rainbow.brackets"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663644223689</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="did math">
+      <created>1663647836309</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663647836309</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,7 +99,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed dir structure" />
     <MESSAGE value="mv ModChallenge &gt; Functions.modChallenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="mv ModChallenge &gt; Functions.modChallenge" />
+    <MESSAGE value="did math" />
+    <option name="LAST_COMMIT_MESSAGE" value="did math" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
