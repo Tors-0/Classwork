@@ -1,7 +1,5 @@
-package net.rae;
 public class ModChallenge {
-    public static String main(int args) {
-        int num = args;
+    public static String numStripper(int num) {
         int a = num % 10;
         int b = num % 100 - a;
         int c = num % 1000 - a - b;
