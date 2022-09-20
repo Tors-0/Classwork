@@ -1,5 +1,5 @@
-public class ModChallenge {
-    public static String numStripper(int num) {
+public class Functions {
+    public static String modChallenge(int num) {
         int a = num % 10;
         int b = num % 100 - a;
         int c = num % 1000 - a - b;
