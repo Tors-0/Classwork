@@ -12,4 +12,14 @@ public class Functions {
         return("First: " + d + "\nSecond: " + c + "\nThird: " + b + "\nFourth: " + a);
 
     }
+    public static int f(int x) {
+        return (x*x)+(5*x);
+    }
+    public static int g(int x) {
+        return x+3;
+    }
+    public static void main(String[] args) {
+        int ans = g(g(-2));
+        System.out.println(ans);
+    }
 }
