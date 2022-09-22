@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5d920a8-d872-4f48-a6b9-7070667e667b" name="Changes" comment="completed unit 1 final project">
+    <list default="true" id="9c2add8b-2175-4568-8b51-59512781a129" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/Testing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +39,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/rae/Documents/mods/intellij/dark-deep",
-    "settings.editor.selected.configurable": "preferences.rainbow.brackets"
+    "last_opened_file_path": "C:/Users/Rae/Downloads",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -47,7 +51,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a5d920a8-d872-4f48-a6b9-7070667e667b" name="Changes" comment="" />
+      <changelist id="9c2add8b-2175-4568-8b51-59512781a129" name="Changes" comment="update" />
       <created>1663640080200</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
