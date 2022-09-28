@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 public class Client {
     public static void main(String[] args) {
-        Student rae = new Student("rae",11);
-        System.out.print(rae);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number to be parsed: ");
+        int num = input.nextInt();
+        System.out.println(Functions.modChallengeLoop(num));
     }
 }

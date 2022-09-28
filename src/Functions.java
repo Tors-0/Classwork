@@ -20,13 +20,14 @@ public class Functions {
         return output;
     }
     public static int f(int x) {
-        return (x*x)+(5*x);
+        return 2 * (x*x) - 3;
     }
     public static int g(int x) {
         return x+3;
     }
     public static void main(String[] args) {
-        int ans = g(g(-2));
+        int x = 4;
+        int ans = f(x+2)-f(x-2);
         System.out.println(ans);
     }
 }
