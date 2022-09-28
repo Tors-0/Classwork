@@ -9,13 +9,47 @@ public class Functions {
         d /= 1000;
         return("First: " + d + "\nSecond: " + c + "\nThird: " + b + "\nFourth: " + a);
     }
-    public static String modChallengeLoop(int num) {
+    public static String modChallengeLoop(long num) {
         String output = "";
-        int step;
+        long step;
+        int stepNum = 1;
         while (num > 0) {
-            step = num % 10;
-            num /= 10;
-            output = "\n" + step + output;
+            if (stepNum == 11) {
+                step = num % 10;
+                num /= 10;
+                output = "\n" + stepNum + "th: " + step + output;
+                stepNum++;
+            } else if (stepNum == 12) {
+                step = num % 10;
+                num /= 10;
+                output = "\n" + stepNum + "th: " + step + output;
+                stepNum++;
+            } else if (stepNum == 13) {
+                step = num % 10;
+                num /= 10;
+                output = "\n" + stepNum + "th: " + step + output;
+                stepNum++;
+            } else if (stepNum % 10 == 1) {
+                step = num % 10;
+                num /= 10;
+                output = "\n" + stepNum + "st: " + step + output;
+                stepNum++;
+            } else if (stepNum % 10 == 2) {
+                step = num % 10;
+                num /= 10;
+                output = "\n" + stepNum + "nd: " + step + output;
+                stepNum++;
+            } else if (stepNum % 10 == 3) {
+                step = num % 10;
+                num /= 10;
+                output = "\n" + stepNum + "rd: " + step + output;
+                stepNum++;
+            } else {
+                step = num % 10;
+                num /= 10;
+                output = "\n" + stepNum + "th: " + step + output;
+                stepNum++;
+            }
         }
         return output;
     }
