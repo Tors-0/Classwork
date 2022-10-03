@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Functions {
     public static String modChallenge(int num) {
         int a = num % 10;
@@ -59,9 +61,19 @@ public class Functions {
     public static int g(int x) {
         return x+3;
     }
+    public static String BirthdayChallenge() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Whose birthday is it: ");
+        String name = input.nextLine();
+        return part2() + "\n" + part2() + "\n" + part1(name) + "\n" + part2();
+    }
+    public static String part1(String name) {
+        return "Happy birthday dear " + name;
+    }
+    public static String part2() {
+        return "Happy birthday to you!";
+    }
     public static void main(String[] args) {
-        int x = 4;
-        int ans = f(x+2)-f(x-2);
-        System.out.println(ans);
+        System.out.println(BirthdayChallenge());
     }
 }

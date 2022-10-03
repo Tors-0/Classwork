@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="joml-1.10.5-sources" level="project" />
+    <orderEntry type="library" name="joml-1.10.5-sources1" level="project" />
   </component>
 </module>

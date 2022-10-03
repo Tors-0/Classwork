@@ -1,3 +1,5 @@
+package game;
+
 public class Voxel {
     public final int xCord;
     public final int yCord;

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.9.29-3 added linux64 lwjgl libs">
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.9.30-0">
+      <change afterPath="$PROJECT_DIR$/src/game/Scene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/VoxelLightmapping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/VoxelLightmapping2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WindowInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/WindowInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Classwork.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Voxel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Voxel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/WindowInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/WindowInit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +42,17 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/rae/Documents/mods/intellij/Classwork/lwjgl-lib/gnu64/lwjgl.jar",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/Rae/IdeaProjects/Classwork/lwjgl-lib/win64/lwjgl.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rae\IdeaProjects\Classwork\src" />
       <recent name="$PROJECT_DIR$/lwjgl-lib/win64" />
       <recent name="$PROJECT_DIR$/lwjgl-lib" />
     </key>
@@ -80,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664490695064</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2022.9.30-0">
+      <created>1664556023848</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664556023848</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +113,7 @@
     <MESSAGE value="2022.9.29-0" />
     <MESSAGE value="2022.9.29-1" />
     <MESSAGE value="2022.9.29-3 added linux64 lwjgl libs" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.9.29-3 added linux64 lwjgl libs" />
+    <MESSAGE value="2022.9.30-0" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.9.30-0" />
   </component>
 </project>
