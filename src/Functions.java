@@ -73,7 +73,18 @@ public class Functions {
     public static String part2() {
         return "Happy birthday to you!";
     }
+    public static double math0() {
+        int counter = 8;
+        double solved = 0;
+        double var = 9;
+        while (counter > 0) {
+            solved += ((var * var) / 4);
+            counter--;
+            var -= 0.25;
+        }
+        return solved;
+    }
     public static void main(String[] args) {
-        System.out.println(BirthdayChallenge());
+        System.out.println(math0());
     }
 }
