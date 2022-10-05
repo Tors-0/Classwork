@@ -55,11 +55,14 @@ public class Functions {
         }
         return output;
     }
-    public static int f(int x) {
-        return 2 * (x*x) - 3;
+    public static double f(double x) {
+        return 3 * x - 5;
     }
-    public static int g(int x) {
-        return x+3;
+    public static double g(double x) {
+        return 4 - x * x;
+    }
+    public static double h(double x) {
+        return 2 * Math.cos(x);
     }
     public static String BirthdayChallenge() {
         Scanner input = new Scanner(System.in);
@@ -85,6 +88,6 @@ public class Functions {
         return solved;
     }
     public static void main(String[] args) {
-        System.out.println(math0());
+        System.out.println(h(g(f(Math.PI))));
     }
 }
