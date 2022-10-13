@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.10.4-0">
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.10.13-0">
+      <change afterPath="$PROJECT_DIR$/finch-lib/apache-log4j-extras-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/cmu_us_kal.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/cmulex.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/commons-collections-3.2.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/commons-io-2.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/commons-lang-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/commons-lang3-3.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-audio.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-collections.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-device.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-serial.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-speech.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-user-interface.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-util.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/create-lab-commons-xml.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/en_us.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/freetts.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/hid4java.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/log4j-1.2.16.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/slf4j-nop-1.7.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/swing-layout-1.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/terk-core.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finch-lib/terk-services.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/commons-lang-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/freetts-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/jdom-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/jna-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/log4j-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/lti-civil-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/rome-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/swing-layout-license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Unit2Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/birdbraintechnologies/Finch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Classwork.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,21 +67,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rae/IdeaProjects/Classwork/lwjgl-lib/win64/lwjgl.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/Rae/IdeaProjects/Classwork/finch-lib/terk-services.jar",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.rainbow.brackets"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rae\IdeaProjects\Classwork\licenses" />
+      <recent name="C:\Users\Rae\IdeaProjects\Classwork\finch-lib" />
       <recent name="C:\Users\Rae\IdeaProjects\Classwork\src" />
       <recent name="$PROJECT_DIR$/lwjgl-lib/win64" />
       <recent name="$PROJECT_DIR$/lwjgl-lib" />
@@ -96,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664920965397</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2022.10.13-0">
+      <created>1665673168776</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665673168776</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +162,10 @@
     <MESSAGE value="2022.9.29-3 added linux64 lwjgl libs" />
     <MESSAGE value="2022.9.30-0" />
     <MESSAGE value="2022.10.4-0" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.10.4-0" />
+    <MESSAGE value="2022.10.13-0" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.10.13-0" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Classwork$Unit2Project.ic" NAME="Unit2Project Coverage Results" MODIFIED="1665675308804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

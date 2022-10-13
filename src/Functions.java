@@ -77,6 +77,6 @@ public class Functions {
         return Math.min(Math.min(a, b), c);
     }
     public static void main(String[] args) {
-        System.out.println(compare(7, 9, 2));
+        System.out.println((int)(Math.random()*6)+1);
     }
 }
