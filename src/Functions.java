@@ -74,8 +74,7 @@ public class Functions {
         return "Happy birthday to you!";
     }
     public static int compare(int a, int b, int c) {
-        int temp = Math.min(a, b);
-        return Math.min(temp, c);
+        return Math.min(Math.min(a, b), c);
     }
     public static void main(String[] args) {
         System.out.println(compare(7, 9, 2));
