@@ -73,7 +73,11 @@ public class Functions {
     public static String part2() {
         return "Happy birthday to you!";
     }
+    public static int compare(int a, int b, int c) {
+        int temp = Math.min(a, b);
+        return Math.min(temp, c);
+    }
     public static void main(String[] args) {
-        System.out.println(BirthdayChallenge());
+        System.out.println(compare(7, 9, 2));
     }
 }
