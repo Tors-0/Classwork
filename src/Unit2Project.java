@@ -62,16 +62,6 @@ public class Unit2Project {
         //end exercise 22
         //exercise 23
         //myFinch.setLED(0,255,0);
-        /* rgb time
-        int x = 0;
-        while(true) {
-            x++;
-            myFinch.setLED(x, x/2, x-50);
-            if(x == 255) {
-                x = 0;
-            }
-        }
-         */
         //myFinch.setWheelVelocities(255,255,2000);
         //myFinch.setLED(255,0,0);
         //myFinch.setWheelVelocities(-255,-255,2000);
