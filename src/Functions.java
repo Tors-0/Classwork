@@ -77,6 +77,7 @@ public class Functions {
         return Math.min(Math.min(a, b), c);
     }
     public static void main(String[] args) {
-        System.out.println((int)(Math.random()*6)+1);
+        String thing1 = "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111";
+        System.out.println(thing1.length());
     }
 }

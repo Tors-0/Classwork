@@ -1,11 +1,11 @@
-import com.birdbraintechnologies.*;
+//import com.birdbraintechnologies.*;
 
 import java.util.Scanner;
 
 public class Unit2Project {
     public static void main(final String[] args) {
         Scanner input = new Scanner(System.in);
-        Finch myFinch = new Finch();
+        //Finch myFinch = new Finch();
         //exercise 5 vv
         //System.out.print("What is your name: ");
         //String speech = input.nextLine();
@@ -67,12 +67,12 @@ public class Unit2Project {
         //myFinch.setWheelVelocities(-255,-255,2000);
         //end exercise 23
         //exercise 24
-        myFinch.setLED(255,0,0);
+        //myFinch.setLED(255,0,0);
         int randy = (int)(Math.random()*10) + 10;
         randy *= 1000;
-        myFinch.setWheelVelocities(255,-255,randy);
-        myFinch.setLED(0,255,0,2000);
+        //myFinch.setWheelVelocities(255,-255,randy);
+        //myFinch.setLED(0,255,0,2000);
         //end exercise 24
-        myFinch.quit();
+        //myFinch.quit();
     }
 }
