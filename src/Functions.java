@@ -73,11 +73,33 @@ public class Functions {
     public static String part2() {
         return "Happy birthday to you!";
     }
-    public static int compare(int a, int b, int c) {
+    public static int findMin(int a, int b, int c) {
         return Math.min(Math.min(a, b), c);
     }
+    public static String coinFlip() { //simulate a game of coin toss, telling the user if they guesses correctly or not
+        Scanner input = new Scanner(System.in);
+        boolean guess;
+        System.out.print("Type your guess (heads / tails): ");
+        String user = input.nextLine();
+        if (user.equals("heads")) {
+            guess = true;
+        } else if (user.equals("tails")) {
+            guess = false;
+        } else {
+            return "Error: User input invalid range. Don't use caps or spaces in your answer!";
+        }
+        int coin = (int) (Math.random()*2);
+        if (guess && coin == 1) {
+            return "Coin lands on heads! You win!";
+        } else if (!guess && coin == 0) {
+            return "Coin lands on tails! You win!";
+        } else if (guess && coin == 0) {
+            return "Coin lands on tails! You lose!";
+        } else {
+            return "Coin lands on heads! You lose!";
+        }
+    }
     public static void main(String[] args) {
-        String thing1 = "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111";
-        System.out.println(thing1.length());
+        System.out.println(coinFlip());
     }
 }
