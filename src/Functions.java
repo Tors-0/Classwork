@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Functions {
@@ -99,7 +100,25 @@ public class Functions {
             return "Coin lands on heads! You lose!";
         }
     }
+    public static int[] front11(int[] a, int[] b) {
+        int[] c;
+        if (a.length == 0) {
+            if (b.length == 0) {
+                c = new int[] {};
+            } else {
+                c = new int[] {b[0]};
+            }
+        } else if (b.length == 0) {
+            c = new int[] {a[0]};
+        } else {
+            c = new int[] {a[0],b[0]};
+        }
+        return c;
+    }
+
     public static void main(String[] args) {
-        System.out.println(coinFlip());
+        int[] a = {1,3,4};
+        int[] b = {2,7,9};
+        System.out.println(Arrays.toString(front11(a,b)));
     }
 }
