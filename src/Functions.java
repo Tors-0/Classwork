@@ -117,7 +117,7 @@ public class Functions {
     }
     public static String baseX() {
         Scanner input = new Scanner(System.in);
-        System.out.print("What base would you like to know (ints 1-62): ");
+        System.out.print("What base would you like to know about? (ints 1-62): ");
         int n = input.nextInt();
         String[] ans = new String[n];
         if (n > 62) {
@@ -134,8 +134,25 @@ public class Functions {
         }
         return "Values used in base " + n + ": " + Arrays.toString(ans);
     }
+    public static String toScientific(double n) {
+        int count = 0;
+        if (n >= 10) {
+            while (n >= 10) {
+                n /= 10;
+                count++;
+            }
+        } else if (n < 1) {
+            while (n < 1) {
+                n *= 10;
+                count--;
+            }
+        }
+        return n + "e" + count;
+    }
     public static void main(String[] args) {
-        int n = 2;
-        System.out.println(baseX());
+        String thing = toScientific(1300000);
+        System.out.println(thing);
+        double x = Double.parseDouble(thing);
+        System.out.println(x);
     }
 }
