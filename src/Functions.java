@@ -115,10 +115,27 @@ public class Functions {
         }
         return c;
     }
-
+    public static String baseX() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("What base would you like to know (ints 1-62): ");
+        int n = input.nextInt();
+        String[] ans = new String[n];
+        if (n > 62) {
+            return "Error: Value out of range! 1-62";
+        }
+        for (int i = 0; i < 10 && i < n; i++) {
+            ans[i] = String.valueOf(i);
+        }
+        if (n > 10) {
+            char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
+            for (int i = 0; i + 10 < n; i++) {
+                ans[i + 10] = ""+alpha[i];
+            }
+        }
+        return "Values used in base " + n + ": " + Arrays.toString(ans);
+    }
     public static void main(String[] args) {
-        int[] a = {1,3,4};
-        int[] b = {2,7,9};
-        System.out.println(Arrays.toString(front11(a,b)));
+        int n = 2;
+        System.out.println(baseX());
     }
 }
