@@ -56,12 +56,6 @@ public class Functions {
         }
         return output;
     }
-    public static int f(int x) {
-        return 2 * (x*x) - 3;
-    }
-    public static int g(int x) {
-        return x+3;
-    }
     public static String BirthdayChallenge() {
         Scanner input = new Scanner(System.in);
         System.out.println("Whose birthday is it: ");
@@ -149,10 +143,20 @@ public class Functions {
         }
         return n + "e" + count;
     }
+    public static double f(double x) {
+        return x * x;
+    }
+    public static double g(double x) {
+        return -2 * x + 8;
+    }
+    public static double h(double x) {
+        if (f(x) <= 0 || g(x) <= 0) {
+            return 0.0;
+        }
+        return Math.min(f(x), g(x));
+    }
     public static void main(String[] args) {
-        String thing = toScientific(1300000);
-        System.out.println(thing);
-        double x = Double.parseDouble(thing);
-        System.out.println(x);
+        double x = 5;
+        System.out.println(h(x));
     }
 }
