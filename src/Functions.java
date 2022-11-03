@@ -76,12 +76,12 @@ public class Functions {
         boolean guess;
         System.out.print("Type your guess (heads / tails): ");
         String user = input.nextLine();
-        if (user.equals("heads")) {
+        if (user.toLowerCase().equals("heads")) {
             guess = true;
-        } else if (user.equals("tails")) {
+        } else if (user.toLowerCase().equals("tails")) {
             guess = false;
         } else {
-            return "Error: User input invalid range. Don't use caps or spaces in your answer!";
+            return "Error: User input invalid range. Don't use spaces in your answer!";
         }
         int coin = (int) (Math.random()*2);
         if (guess && coin == 1) {
