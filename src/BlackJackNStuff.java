@@ -127,6 +127,15 @@ public class BlackJackNStuff {
             dealerPos++;
             cards--;
             deck.put(choice, deck.get(choice)+1);
+            int total = 0;
+            for (int i = 0; i < 5; i++) {
+                total += cardValue(player[i]);
+            }
+            if (total == 21) {
+                endBlackjack(false);
+            } else if (total > 21) {
+                endBlackjack(true);
+            }
         } else {
             drawCardDealer();
         }
@@ -153,19 +162,19 @@ public class BlackJackNStuff {
             drawCardPlayer();
         }
     }
-    public static char blackjack(int a, int b) {  // method that returns which value wins the game, ‘a’ if a wins, ‘b’ if b wins, returns null if both values are over 21
+    public static boolean blackjack(int a, int b) {  // method that returns which value wins the game, ‘true’ if player wins, ‘false’ if dealer wins, returns null if both values are over 21
         int distA = 21 - a;
         int distB = 21 - b;
         if (distA < 0 && distB < 0) {
-            return 0;
+            return null;
         } else if (distA < 0) {
-            return 'b';
+            return 'false';
         } else if (distB < 0) {
-            return 'a';
+            return 'true';
         } else if (distA < distB) {
-            return 'a';
+            return 'true';
         } else {
-            return 'b';
+            return 'false';
         }
     }
     private static void beginGuess3() {
