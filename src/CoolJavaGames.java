@@ -10,7 +10,7 @@ public class CoolJavaGames {
     // (key), and the number of that card remaining in the deck (value). This is used to prevent the same card from
     // being drawn more than 4 times, since that would be impossible in a real deck of cards
     static int cards = 52; // stores the number of cards left in the deck
-    static int[] dealer = new int[5]; // stores the dealers hand
+    static int[] dealer = new int[5]; // stores the dealers hand, maxes at 5 bc of 5 card charlie rule
     static int dealerPos = 0; // stores the next blank index in dealers hand
     static int[] player = new int[5]; // stores the players hand
     static int playerPos = 0; // stores the next blank index in players hand
@@ -62,25 +62,48 @@ public class CoolJavaGames {
         }
     }
     public static void beginBlackjack() {
-        for (int i = 0; i <= 13; i++) { // fills the deck map with default value of 4
-            deck.put(i,4);
+        for (int i = 1; i <= 52; i++) { // fills the deck map with default value of 4
+            deck.put(i,1);
         }
         drawCardPlayer();
         drawCardDealer();
         drawCardPlayer();
         drawCardDealer();
-        System.out.println("\nThe Game Begins...\n\nThe dealer's face-up card is a " + intToCard(dealer[0]));
-        if (smartCardValue(player[0],"player") + smartCardValue(player[1],"player") == 21) {
-            System.out.println("You have a natural 21! You win!");
-            System.exit(0);
+        System.out.println("\nThe Game Begins...\n" +
+                "House rules: 5 Card Charlie: If a player reaches 5 cards without going over 21, they win " +
+                "automatically.\n\nThe dealer's face-up card is a " + intToCard(dealer[0]));
+        if (smartCardValue(player[0],"player") + smartCardValue(player[1],"player") == 21 && smartCardValue(dealer[0],"dealer") + smartCardValue(dealer[1],"dealer") == 21) {
+            System.out.println("You and the dealer got a natural blackjack! Dealer wins due to tiebreaker rule!");
+            endBlackjack(1);
+        } else if (smartCardValue(dealer[0],"dealer") + smartCardValue(dealer[1],"dealer") == 21) {
+            System.out.println("The dealer got a natural blackjack!");
+            endBlackjack(1);
+        } else if (smartCardValue(player[0],"player") + smartCardValue(player[1],"player") == 21) {
+            System.out.println("You got a natural blackjack!");
+            endBlackjack(0);
+        } else {
+            playerTurn();
+            dealerTurn();
+            int outcome = blackjackEval(allTotals());
+            endBlackjack(outcome);
         }
-        playerTurn();
-        dealerTurn();
-        int outcome = blackjackEval(allTotals());
-        endBlackjack(outcome);
+    }
+    private static void check5CC(int[] nums) {
+        int player = nums[0];
+        int dealer = nums[1];
+        if (playerPos >= 5 && player <= 21) {
+            System.out.println("Player wins via 5 Card Charlie rule!");
+            endBlackjack(0);
+        } else if (dealerPos >= 5 && dealer <= 21) {
+            System.out.println("Dealer wins via 5 Card Charlie rule!");
+            endBlackjack(1);
+        }
     }
     private static int smartCardValue(int n, String user) { // intelligently decides if aces should count as 1 or 11
         // based on card totals
+        while (n > 13) {
+            n -= 13;
+        }
         if (n == 1) {
             return choose1or11(user);
         } else {
@@ -88,9 +111,15 @@ public class CoolJavaGames {
         }
     }
     private static int cardValue(int n) { // always counts aces as 1s, used to determine smart value
+        while (n > 13) {
+            n -= 13;
+        }
         return Math.min(n, 10);
     }
     private static int cardValue11(int n) { // always counts aces as 11s, used to determine smart value
+        while (n > 13) {
+            n -= 13;
+        }
         if (n == 1) {
             return 11;
         } else {
@@ -110,19 +139,34 @@ public class CoolJavaGames {
         return output;
     }
     private static String intToCard(int n) {
+        int count = 0;
+        while (n > 13) {
+            n -= 13;
+            count++;
+        }
+        String suit;
+        if (count == 0) {
+            suit = "Clubs";
+        } else if (count == 1) {
+            suit = "Diamonds";
+        } else if (count == 2) {
+            suit = "Hearts";
+        } else {
+            suit = "Spades";
+        }
         String output;
         if (n == 1) {
-            output = "Ace";
+            output = "Ace of " + suit;
         } else if (n == 11) {
-            output = "Jack";
+            output = "Jack of " + suit;
         } else if (n == 12) {
-            output = "Queen";
+            output = "Queen of " + suit;
         } else if (n == 13) {
-            output = "King";
+            output = "King of " + suit;
         } else if (n == 0) {
             output = "Empty";
         } else {
-            output = String.valueOf(n);
+            output = n + " of " + suit;
         }
         return output;
     }
@@ -149,6 +193,7 @@ public class CoolJavaGames {
         }
     }
     private static void playerTurn() {
+        check5CC(allTotals());
         String output = "Your hand: ";
         for (int i = 0; i < 5; i++) {
             output += intToCard(player[i]) + ", ";
@@ -164,6 +209,7 @@ public class CoolJavaGames {
         }
     }
     private static void dealerTurn() {
+        check5CC(allTotals());
         int total = 0;
         for (int i = 0; i < 5; i++) {
             total += smartCardValue(dealer[i],"dealer");
@@ -202,7 +248,7 @@ public class CoolJavaGames {
         }
     }
     private static void drawCardDealer() { // draws a card from the deck to the dealers hand
-        int choice = (int) (Math.random() * 13) + 1;
+        int choice = (int) (Math.random() * 52) + 1;
         if (deck.get(choice) > 0) {
             dealer[dealerPos] = choice;
             dealerPos++;
