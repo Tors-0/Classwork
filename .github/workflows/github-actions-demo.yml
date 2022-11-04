@@ -5,5 +5,5 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: javac ./src/CoolJavaGames.java
-      - run: java ./src/CoolJavaGames
+      - run: javac src/CoolJavaGames.java
+      - run: java src/CoolJavaGames
