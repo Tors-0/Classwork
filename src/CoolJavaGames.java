@@ -13,15 +13,12 @@ public class CoolJavaGames {
     static int dealerPos = 0; // stores the next blank index in dealers hand
     static int[] player = new int[5]; // stores the players hand
     static int playerPos = 0; // stores the next blank index in players hand
-    static final String ANSI_CYAN = "\u001B[36m";
-    static final String ANSI_RESET = "\u001B[0m";
+    static final String ANSI_CYAN = "";
+    //ANSI_CYAN = "\u001B[36m";
+    static final String ANSI_RESET = "";
+    //ANSI_RESET = "\u001B[0m";
     public static void main(String[] args) {
-        System.out.println("""
-                What game would you like to play?:
-                0 : Rock Paper Scissors
-                1 : Guess out of 3
-                2 : Blackjack
-                3 : I don't want to play a game""");
+        System.out.println("What game would you like to play?:\n0 : Rock Paper Scissors\n1 : Guess out of 3\n2 : Blackjack\n3 : I don't want to play a game");
         System.out.print("Your choice: ");
         String choice = scanny.nextLine();
 
