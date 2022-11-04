@@ -8,12 +8,13 @@ public class CoolJavaGames {
 
     static Map<Integer,Integer> deck = new HashMap<>(); // map to store the integer value of each card in the deck
     // (key), and the number of that card remaining in the deck (value). This is used to prevent the same card from
-    // being drawn more than 4 times, since that would be impossible in a real deck of cards
-    static int cards = 52; // stores the number of cards left in the deck
+    // being drawn more than 1 time, since that would be impossible in a real deck of cards
     static int[] dealer = new int[5]; // stores the dealers hand, maxes at 5 bc of 5 card charlie rule
     static int dealerPos = 0; // stores the next blank index in dealers hand
     static int[] player = new int[5]; // stores the players hand
     static int playerPos = 0; // stores the next blank index in players hand
+    static final String ANSI_CYAN = "\u001B[36m";
+    static final String ANSI_RESET = "\u001B[0m";
     public static void main(String[] args) {
         System.out.println("What game would you like to play?:" +
                 "\n0 : Rock Paper Scissors" +
@@ -65,13 +66,16 @@ public class CoolJavaGames {
         for (int i = 1; i <= 52; i++) { // fills the deck map with default value of 4
             deck.put(i,1);
         }
+        System.out.println("\nThe Game Begins...\nHouse rules: " + ANSI_CYAN + "5 Card Charlie" + ANSI_RESET + ": If " +
+                "a player reaches 5 cards without going over 21, they win automatically.\n");
         drawCardPlayer();
         drawCardDealer();
+        System.out.println("The dealer's face-up card is a(n) " + intToCard(dealer[0]));
         drawCardPlayer();
         drawCardDealer();
-        System.out.println("\nThe Game Begins...\n" +
-                "House rules: 5 Card Charlie: If a player reaches 5 cards without going over 21, they win " +
-                "automatically.\n\nThe dealer's face-up card is a " + intToCard(dealer[0]));
+        continueBlackjack();
+    }
+    private static void continueBlackjack() {
         if (smartCardValue(player[0],"player") + smartCardValue(player[1],"player") == 21 && smartCardValue(dealer[0],"dealer") + smartCardValue(dealer[1],"dealer") == 21) {
             System.out.println("You and the dealer got a natural blackjack! Dealer wins due to tiebreaker rule!");
             endBlackjack(1);
@@ -155,23 +159,25 @@ public class CoolJavaGames {
             suit = "Spades";
         }
         String output;
+        String a;
         if (n == 1) {
-            output = "Ace of " + suit;
+            output = ANSI_CYAN + "Ace" + ANSI_RESET + " of " + suit;
         } else if (n == 11) {
-            output = "Jack of " + suit;
+            output = ANSI_CYAN + "Jack" + ANSI_RESET + " of " + suit;
         } else if (n == 12) {
-            output = "Queen of " + suit;
+            output = ANSI_CYAN + "Queen" + ANSI_RESET + " of " + suit;
         } else if (n == 13) {
-            output = "King of " + suit;
+            output = ANSI_CYAN + "King" + ANSI_RESET + " of " + suit;
         } else if (n == 0) {
-            output = "Empty";
+            output = "__";
         } else {
-            output = n + " of " + suit;
+            a = ANSI_CYAN + n + ANSI_RESET;
+            output = a + " of " + suit;
         }
         return output;
     }
     private static void endBlackjack(int x) {
-        String output = "Your hand: ";
+        String output = "Your hand:     ";
         for (int i = 0; i < 5; i++) {
             output += intToCard(player[i]) + ", ";
         }
@@ -199,11 +205,11 @@ public class CoolJavaGames {
             output += intToCard(player[i]) + ", ";
         }
         System.out.println("\n" + output);
-        System.out.print("Do you choose to stand or hit : ");
+        System.out.print("Do you choose to stand or hit (s/h): ");
         String userChoice = scanny.nextLine();
-        if (userChoice.equalsIgnoreCase("stand")) {
-            System.out.println("You end your turn. Dealer begins playing.\n");
-        } else if (userChoice.equalsIgnoreCase("hit")) {
+        if (userChoice.equalsIgnoreCase("stand") || userChoice.equalsIgnoreCase("s")) {
+            System.out.println("You end your turn. Dealer begins playing...\n");
+        } else if (userChoice.equalsIgnoreCase("hit") || userChoice.equalsIgnoreCase("h")) {
             drawCardPlayer();
             playerTurn();
         }
@@ -252,8 +258,7 @@ public class CoolJavaGames {
         if (deck.get(choice) > 0) {
             dealer[dealerPos] = choice;
             dealerPos++;
-            cards--;
-            deck.put(choice, deck.get(choice)+1);
+            deck.put(choice, deck.get(choice)-1);
             int total = 0;
             for (int i = 0; i < 5; i++) {
                 total += cardValue(player[i]);
@@ -268,12 +273,11 @@ public class CoolJavaGames {
         }
     }
     private static void drawCardPlayer() { // draws a card from the deck to the players hand
-        int choice = (int) (Math.random() * 13) + 1;
+        int choice = (int) (Math.random() * 52) + 1;
         if (deck.get(choice) > 0) {
             player[playerPos] = choice;
             playerPos++;
-            cards--;
-            deck.put(choice, deck.get(choice)+1);
+            deck.put(choice, deck.get(choice)-1);
             int total = 0;
             for (int i = 0; i < 5; i++) {
                 total += smartCardValue(player[i],"player");
@@ -281,6 +285,7 @@ public class CoolJavaGames {
             if (total == 21) {
                 endBlackjack(0);
             } else if (total > 21) {
+                System.out.println();
                 endBlackjack(1);
             }
         } else {
