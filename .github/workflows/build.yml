@@ -1,0 +1,3 @@
+- run: wget https://raw.githubusercontent.com/Tors-0/Classwork/master/src/CoolJavaGames.java
+- run: javac CoolJavaGames.java
+- run: jar -cf JavaGames.jar CoolJavaGames.class
