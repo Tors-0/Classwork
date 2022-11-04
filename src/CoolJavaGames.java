@@ -1,0 +1,275 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class CoolJavaGames {
+
+    static Scanner scanny = new Scanner(System.in);
+
+    static Map<Integer,Integer> deck = new HashMap<>(); // map to store the integer value of each card in the deck
+    // (key), and the number of that card remaining in the deck (value). This is used to prevent the same card from
+    // being drawn more than 4 times, since that would be impossible in a real deck of cards
+    static int cards = 52; // stores the number of cards left in the deck
+    static int[] dealer = new int[5]; // stores the dealers hand
+    static int dealerPos = 0; // stores the next blank index in dealers hand
+    static int[] player = new int[5]; // stores the players hand
+    static int playerPos = 0; // stores the next blank index in players hand
+    public static void main(String[] args) {
+        System.out.println("What game would you like to play?:" +
+                "\n0 : Rock Paper Scissors" +
+                "\n1 : Guess out of 3" +
+                "\n2 : Blackjack" +
+                "\n3 : I don't want to play a game");
+        System.out.print("Your choice: ");
+        String choice = scanny.nextLine();
+
+        // Check which choice you pick
+        if ((Integer.parseInt(choice) == 0) || choice.equalsIgnoreCase("ROCK PAPER SCISSORS"))   {
+            // If you pick rock paper scissors
+            beginRPS();
+        } else if (Integer.parseInt(choice) == 1 || choice.equalsIgnoreCase("GUESS OUT OF 3")) {
+            // If you pick guess3
+            beginGuess3();
+        } else if (Integer.parseInt(choice) == 2 || choice.equalsIgnoreCase("BLACKJACK")) {
+            // If you choose Blackjack
+            beginBlackjack();
+        } else if (Integer.parseInt(choice) == 3 || choice.equalsIgnoreCase("I DON'T WANT TO PLAY A GAME")) {
+            //If you choose not to play a game
+            System.exit(0);
+        } else {
+            System.out.println("Invalid choice!");
+            System.exit(1);
+        }
+    }
+
+    private static void beginRPS() {
+        //Generates AI hand
+        int rand = (int) (Math.random() * 3);
+
+        System.out.println("Please pick a symbol, Rock, Paper, or scissors"); //asks which hand you would like to pick
+        String hand = scanny.nextLine(); //inputs your hand as a variable
+
+        //checks which hand you picked
+        if ((hand.equalsIgnoreCase("ROCK")) && rand == 0) {
+            System.out.println("Ai picked scissors, you win"); //Rock beats scissors so you beat the AI
+        } else if (hand.equalsIgnoreCase("PAPER") && rand == 1) {
+            System.out.println("Ai picked rock, you win"); // paper beats rock so you beat the AI
+        } else if (hand.equalsIgnoreCase("SCISSORS") && rand == 2) {
+            System.out.println("Ai picked paper, you win"); // scissors beat paper, so you win
+        } else {
+            System.out.println("You lose (or picked an invalid input)"); //if you lost or picked something that wasn't an option
+            System.exit(1);
+        }
+    }
+    public static void beginBlackjack() {
+        for (int i = 0; i <= 13; i++) { // fills the deck map with default value of 4
+            deck.put(i,4);
+        }
+        drawCardPlayer();
+        drawCardDealer();
+        drawCardPlayer();
+        drawCardDealer();
+        System.out.println("\nThe Game Begins...\n\nThe dealer's face-up card is a " + intToCard(dealer[0]));
+        if (smartCardValue(player[0],"player") + smartCardValue(player[1],"player") == 21) {
+            System.out.println("You have a natural 21! You win!");
+            System.exit(0);
+        }
+        playerTurn();
+        dealerTurn();
+        int outcome = blackjackEval(allTotals());
+        endBlackjack(outcome);
+    }
+    private static int smartCardValue(int n, String user) { // intelligently decides if aces should count as 1 or 11
+        // based on card totals
+        if (n == 1) {
+            return choose1or11(user);
+        } else {
+            return Math.min(n, 10);
+        }
+    }
+    private static int cardValue(int n) { // always counts aces as 1s, used to determine smart value
+        return Math.min(n, 10);
+    }
+    private static int cardValue11(int n) { // always counts aces as 11s, used to determine smart value
+        if (n == 1) {
+            return 11;
+        } else {
+            return Math.min(10, n);
+        }
+    }
+    private static int[] allTotals() {
+        int playerTotal = 0;
+        int dealerTotal = 0;
+        for (int i = 0; i < 5; i++) {
+            playerTotal += smartCardValue(player[i],"player");
+            dealerTotal += smartCardValue(dealer[i],"dealer");
+        }
+        int[] output = new int[2];
+        output[0] = playerTotal;
+        output[1] = dealerTotal;
+        return output;
+    }
+    private static String intToCard(int n) {
+        String output;
+        if (n == 1) {
+            output = "Ace";
+        } else if (n == 11) {
+            output = "Jack";
+        } else if (n == 12) {
+            output = "Queen";
+        } else if (n == 13) {
+            output = "King";
+        } else if (n == 0) {
+            output = "Empty";
+        } else {
+            output = String.valueOf(n);
+        }
+        return output;
+    }
+    private static void endBlackjack(int x) {
+        String output = "Your hand: ";
+        for (int i = 0; i < 5; i++) {
+            output += intToCard(player[i]) + ", ";
+        }
+        System.out.println(output);
+        output = "Dealer's hand: ";
+        for (int i = 0; i < 5; i++) {
+            output += intToCard(dealer[i]) + ", ";
+        }
+        System.out.println(output);
+        if (x == 0) {
+            System.out.println("\nYou have won the game!");
+            System.exit(0);
+        } else if (x == 1) {
+            System.out.println("\nYou lost the game!");
+            System.exit(0);
+        } else {
+            System.out.println("\nBoth player and dealer bust! Nobody wins!");
+            System.exit(0);
+        }
+    }
+    private static void playerTurn() {
+        String output = "Your hand: ";
+        for (int i = 0; i < 5; i++) {
+            output += intToCard(player[i]) + ", ";
+        }
+        System.out.println("\n" + output);
+        System.out.print("Do you choose to stand or hit : ");
+        String userChoice = scanny.nextLine();
+        if (userChoice.equalsIgnoreCase("stand")) {
+            System.out.println("You end your turn. Dealer begins playing.\n");
+        } else if (userChoice.equalsIgnoreCase("hit")) {
+            drawCardPlayer();
+            playerTurn();
+        }
+    }
+    private static void dealerTurn() {
+        int total = 0;
+        for (int i = 0; i < 5; i++) {
+            total += smartCardValue(dealer[i],"dealer");
+        }
+        if (total < 17) {
+            drawCardDealer();
+            dealerTurn();
+        } else if (total > 21) {
+            System.out.println("Dealer busts!\n");
+        }else {
+            System.out.println("Dealer has finished her turn, awaiting results...\n\n");
+        }
+    }
+    private static int choose1or11(String user) {
+        int total = 0; // total with ace valued at 1
+        int total11 = 0; // total with ace valued at 11
+        if (user.equals("player")) {
+            for (int i = 0; i < 5; i++) {
+                total += cardValue(player[i]);
+                total11 += cardValue11(player[i]);
+            }
+        } else if (user.equals("dealer")) {
+            for (int i = 0; i < 5; i++) {
+                total += cardValue(dealer[i]);
+                total11 += cardValue11(dealer[i]);
+            }
+        }
+        int diff = 21 - total; // how much headroom is left before 21 using 1 for aces
+        int diff11 = 21 - total11; // how much headroom is left before 21 using 11 for aces
+        if (diff11 < 0) {
+            return 1;
+        } else if (diff11 < diff) {
+            return 11;
+        } else {
+            return 1;
+        }
+    }
+    private static void drawCardDealer() { // draws a card from the deck to the dealers hand
+        int choice = (int) (Math.random() * 13) + 1;
+        if (deck.get(choice) > 0) {
+            dealer[dealerPos] = choice;
+            dealerPos++;
+            cards--;
+            deck.put(choice, deck.get(choice)+1);
+            int total = 0;
+            for (int i = 0; i < 5; i++) {
+                total += cardValue(player[i]);
+            }
+            if (total == 21) {
+                endBlackjack(1);
+            } else if (total > 21) {
+                endBlackjack(0);
+            }
+        } else {
+            drawCardDealer();
+        }
+    }
+    private static void drawCardPlayer() { // draws a card from the deck to the players hand
+        int choice = (int) (Math.random() * 13) + 1;
+        if (deck.get(choice) > 0) {
+            player[playerPos] = choice;
+            playerPos++;
+            cards--;
+            deck.put(choice, deck.get(choice)+1);
+            int total = 0;
+            for (int i = 0; i < 5; i++) {
+                total += smartCardValue(player[i],"player");
+            }
+            if (total == 21) {
+                endBlackjack(0);
+            } else if (total > 21) {
+                endBlackjack(1);
+            }
+        } else {
+            drawCardPlayer();
+        }
+    }
+    public static int blackjackEval(int[] input) {  // method that returns which value wins the
+        // game, ‘0’ if player wins, ‘1’ if dealer wins, returns '2' if both values are over 21
+        int distPlayer = 21 - input[0];
+        int distDealer = 21 - input[1];
+        if (distPlayer < 0 && distDealer < 0) {
+            return 2;
+        } else if (distPlayer < 0) {
+            return 1;
+        } else if (distDealer < 0) {
+            return 0;
+        } else if (distPlayer < distDealer) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    private static void beginGuess3() {
+        //Generates ai number
+        int rand = (int) (Math.random() * 3);
+
+        System.out.println("Please pick a number between 1 and 3, inclusive"); //asks you to pick a number
+        String pick = scanny.nextLine(); //inputs your hand as a variable
+
+        //checks which number you picked
+        if ((Integer.parseInt(pick)) == rand) {
+            System.out.println("Computer picked " + rand + " You Win!"); //if you picked the same thing as the computer then you win
+        } else {
+            System.out.println("You lose (or picked an invalid input)"); //if you didn't pick the same number as the computer or picked something that wasn't an option
+            System.exit(1);
+        }
+    }
+}
