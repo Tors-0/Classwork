@@ -192,7 +192,7 @@ public class CoolJavaGames {
             System.out.println("\nYou lost the game!");
             System.exit(0);
         } else {
-            System.out.println("\nBoth player and dealer bust! Nobody wins!");
+            System.out.println("\nBoth player and dealer bust! Nobody wins.");
             System.exit(0);
         }
     }
