@@ -5,6 +5,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: cd ./src/
+      - run: wget https://github.com/Tors-0/Classwork/blob/master/src/CoolJavaGames.java
       - run: javac CoolJavaGames.java
       - run: java CoolJavaGames
