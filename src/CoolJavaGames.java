@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,6 +13,7 @@ JAR build script: (execute in /src)
 
 public class CoolJavaGames {
     static Scanner scanny = new Scanner(System.in); // scanner will be used to interpret various user choices
+    static File myObj = new File("blackjackData.txt");
     static Map<Integer,Integer> deck = new HashMap<>(); // map to store the integer value of each card in the deck
     // (key), and the number of that card remaining in the deck (value). This is used to prevent the same card from
     // being drawn more than 1 time, since that would be impossible in a real deck of cards
@@ -43,13 +45,48 @@ public class CoolJavaGames {
             beginBlackjack();
         } else if (Integer.parseInt(choice) == 3 || choice.equalsIgnoreCase("I DON'T WANT TO PLAY A GAME")) {
             //If you choose not to play a game
+            System.out.print("Would you like to view statistics? (y/n): ");
+            choice = scanny.next();
+            if (choice.charAt(0) == 'y') {
+                gameStats();
+            }
             System.exit(0);
         } else { // if the detected user input does not match a valid choice
             System.out.println("Invalid choice!");
             System.exit(1);
         }
     }
-
+    private static void gameStats() {
+        try {
+            Scanner reader = new Scanner(myObj);
+            String data;
+            int BJLosses = 0;
+            int BJWins = 0;
+            int BJPlays = 0;
+            while (reader.hasNextLine()) {
+                data = reader.nextLine();
+                if (data.contains("Blackjack")) {
+                    if (data.contains("Dealer.Win")) {
+                        BJLosses++;
+                        BJPlays++;
+                    } else if (data.contains("Player.Win")) {
+                        BJWins++;
+                        BJPlays++;
+                    } else if (data.contains("Both.Lose")) {
+                        BJPlays++;
+                    }
+                }
+            }
+            double winPercent = BJWins / (double) BJPlays * 100;
+            double losePercent = BJLosses / (double) BJPlays * 100;
+            System.out.println("Blackjack statistics:");
+            System.out.println("Player wins: " + BJWins + " (~" + (int)winPercent + "%)");
+            System.out.println("Dealer wins: " + BJLosses + " (~" + (int)losePercent + "%)");
+            System.out.println("Total plays: " + BJPlays);
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred: " + e);
+        }
+    }
     private static void beginRPS() {
         //Generates AI hand
         int rand = (int) (Math.random() * 3);
@@ -104,10 +141,10 @@ public class CoolJavaGames {
         int player = nums[0];
         int dealer = nums[1];
         if (playerPos >= 5 && player <= 21) {
-            System.out.println("Player wins via 5 Card Charlie rule!");
+            System.out.println("\nPlayer wins via 5 Card Charlie rule!");
             endBlackjack(0);
         } else if (dealerPos >= 5 && dealer <= 21) {
-            System.out.println("Dealer wins via 5 Card Charlie rule!");
+            System.out.println("\nDealer wins via 5 Card Charlie rule!");
             endBlackjack(1);
         }
     }
@@ -341,7 +378,6 @@ public class CoolJavaGames {
     }
     private static void saveToFile(String data) {
         try {
-            File myObj = new File("blackjackData.txt");
             FileWriter myWriter = new FileWriter(myObj,true);
             String text = "\n";
             if (myObj.createNewFile()) {
