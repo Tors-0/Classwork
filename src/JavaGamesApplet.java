@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class CoolJavaGames {
+public class JavaGamesApplet {
 
     static Scanner scanny = new Scanner(System.in);
 

@@ -1,11 +1,17 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/*
+JAR build script: (execute in /src)
+~$ jar -c -m Manifest.txt -f CoolJavaGames.jar CoolJavaGames.class LICENSE.md
+ */
+
 public class CoolJavaGames {
-
-    static Scanner scanny = new Scanner(System.in);
-
+    static Scanner scanny = new Scanner(System.in); // scanner will be used to interpret various user choices
     static Map<Integer,Integer> deck = new HashMap<>(); // map to store the integer value of each card in the deck
     // (key), and the number of that card remaining in the deck (value). This is used to prevent the same card from
     // being drawn more than 1 time, since that would be impossible in a real deck of cards
@@ -14,11 +20,14 @@ public class CoolJavaGames {
     static int[] player = new int[5]; // stores the players hand
     static int playerPos = 0; // stores the next blank index in players hand
     static final String ANSI_CYAN = "";
+    // used for color coding of text, uncomment next line if your IDE supports ANSI color outputs in its terminal
     //ANSI_CYAN = "\u001B[36m";
     static final String ANSI_RESET = "";
+    // used for color coding of text, uncomment next line if your IDE supports ANSI color outputs in its terminal
     //ANSI_RESET = "\u001B[0m";
     public static void main(String[] args) {
-        System.out.println("What game would you like to play?:\n0 : Rock Paper Scissors\n1 : Guess out of 3\n2 : Blackjack\n3 : I don't want to play a game");
+        System.out.println("What game would you like to play?: \n0 : Rock Paper Scissors \n1 : Guess out of 3" +
+                "\n2 : Blackjack \n3 : I don't want to play a game");
         System.out.print("Your choice: ");
         String choice = scanny.nextLine();
 
@@ -35,7 +44,7 @@ public class CoolJavaGames {
         } else if (Integer.parseInt(choice) == 3 || choice.equalsIgnoreCase("I DON'T WANT TO PLAY A GAME")) {
             //If you choose not to play a game
             System.exit(0);
-        } else {
+        } else { // if the detected user input does not match a valid choice
             System.out.println("Invalid choice!");
             System.exit(1);
         }
@@ -56,11 +65,12 @@ public class CoolJavaGames {
         } else if (hand.equalsIgnoreCase("SCISSORS") && rand == 2) {
             System.out.println("Ai picked paper, you win"); // scissors beat paper, so you win
         } else {
-            System.out.println("You lose (or picked an invalid input)"); //if you lost or picked something that wasn't an option
+            System.out.println("You lose (or picked an invalid input)");
+            //if you lost or picked something that wasn't an option
             System.exit(1);
         }
     }
-    public static void beginBlackjack() {
+    public static void beginBlackjack() { // prints rules and draws 2 cards to each player
         for (int i = 1; i <= 52; i++) { // fills the deck map with default value of 4
             deck.put(i,1);
         }
@@ -73,8 +83,9 @@ public class CoolJavaGames {
         drawCardPlayer();
         continueBlackjack();
     }
-    private static void continueBlackjack() {
-        if (smartCardValue(player[0],"player") + smartCardValue(player[1],"player") == 21 && smartCardValue(dealer[0],"dealer") + smartCardValue(dealer[1],"dealer") == 21) {
+    private static void continueBlackjack() { // detects if any player was delt a nat21, then continues gameplay
+        if (smartCardValue(player[0],"player") + smartCardValue(player[1],"player") == 21 &&
+                smartCardValue(dealer[0],"dealer") + smartCardValue(dealer[1],"dealer") == 21) {
             System.out.println("You and the dealer got a natural blackjack! Dealer wins due to tiebreaker rule!");
             endBlackjack(1);
         } else if (smartCardValue(dealer[0],"dealer") + smartCardValue(dealer[1],"dealer") == 21) {
@@ -86,11 +97,10 @@ public class CoolJavaGames {
         } else {
             playerTurn();
             dealerTurn();
-            int outcome = blackjackEval(allTotals());
-            endBlackjack(outcome);
+            endBlackjack(blackjackEval(allTotals()));
         }
     }
-    private static void check5CC(int[] nums) {
+    private static void check5CC(int[] nums) { // checks if the 5 card charlie rule has been triggered
         int player = nums[0];
         int dealer = nums[1];
         if (playerPos >= 5 && player <= 21) {
@@ -128,7 +138,7 @@ public class CoolJavaGames {
             return Math.min(10, n);
         }
     }
-    private static int[] allTotals() {
+    private static int[] allTotals() { // returns the total value of both players hands
         int playerTotal = 0;
         int dealerTotal = 0;
         for (int i = 0; i < 5; i++) {
@@ -140,11 +150,12 @@ public class CoolJavaGames {
         output[1] = dealerTotal;
         return output;
     }
-    private static String intToCard(int n) {
+    private static String intToCard(int n) { // returns the name value of the card from the int
         int count = 0;
         while (n > 13) {
+            // since cards can have any value from 1-52, the must be taken down into the 1-13 range for parsing
             n -= 13;
-            count++;
+            count++; // counts how many times the value was decremented, this decides the suit of the card
         }
         String suit;
         if (count == 0) {
@@ -175,6 +186,7 @@ public class CoolJavaGames {
         return output;
     }
     private static void endBlackjack(int x) {
+        // triggered when the game ends, both players' hands go face-up and the console displays who won
         String output = "Your hand:     ";
         for (int i = 0; i < 5; i++) {
             output += intToCard(player[i]) + ", ";
@@ -187,16 +199,20 @@ public class CoolJavaGames {
         System.out.println(output);
         if (x == 0) {
             System.out.println("\nYou have won the game!");
+            saveToFile("Blackjack.Player.Win");
             System.exit(0);
         } else if (x == 1) {
             System.out.println("\nYou lost the game!");
+            saveToFile("Blackjack.Dealer.Win");
             System.exit(0);
         } else {
             System.out.println("\nBoth player and dealer bust! Nobody wins.");
+            saveToFile("Blackjack.All.Lose");
             System.exit(0);
         }
     }
     private static void playerTurn() {
+        // the player's turn, shows the player their full hand, then asks if they hit or stand
         check5CC(allTotals());
         String output = "Your hand: ";
         for (int i = 0; i < 5; i++) {
@@ -213,6 +229,7 @@ public class CoolJavaGames {
         }
     }
     private static void dealerTurn() {
+        // calculates the total of the dealer's hand but doesn't display it, then decides whether to draw or not
         check5CC(allTotals());
         int total = 0;
         for (int i = 0; i < 5; i++) {
@@ -224,10 +241,10 @@ public class CoolJavaGames {
         } else if (total > 21) {
             System.out.println("Dealer busts!\n");
         }else {
-            System.out.println("Dealer has finished her turn, awaiting results...\n\n");
+            System.out.println("Dealer has finished her turn, awaiting results...\n");
         }
     }
-    private static int choose1or11(String user) {
+    private static int choose1or11(String user) { // decides whether aces should count as 1s or 11s for the given user
         int total = 0; // total with ace valued at 1
         int total11 = 0; // total with ace valued at 11
         if (user.equals("player")) {
@@ -256,7 +273,7 @@ public class CoolJavaGames {
         if (deck.get(choice) > 0) {
             dealer[dealerPos] = choice;
             dealerPos++;
-            deck.put(choice, deck.get(choice)-1);
+            deck.put(choice, 0); // decrements the value of that card in the deck to 0, so it can't be drawn again
             int total = 0;
             for (int i = 0; i < 5; i++) {
                 total += cardValue(player[i]);
@@ -275,7 +292,7 @@ public class CoolJavaGames {
         if (deck.get(choice) > 0) {
             player[playerPos] = choice;
             playerPos++;
-            deck.put(choice, deck.get(choice)-1);
+            deck.put(choice, 0); // decrements the value of that card in the deck to 0, so it can't be drawn again
             int total = 0;
             for (int i = 0; i < 5; i++) {
                 total += smartCardValue(player[i],"player");
@@ -308,17 +325,38 @@ public class CoolJavaGames {
     }
     private static void beginGuess3() {
         //Generates ai number
-        int rand = (int) (Math.random() * 3);
-
-        System.out.println("Please pick a number between 1 and 3, inclusive"); //asks you to pick a number
+        int rand = (int) (Math.random() * 3) + 1;
+        //asks you to pick a number
+        System.out.println("Please pick a number between 1 and 3, inclusive");
         String pick = scanny.nextLine(); //inputs your hand as a variable
-
         //checks which number you picked
         if ((Integer.parseInt(pick)) == rand) {
-            System.out.println("Computer picked " + rand + " You Win!"); //if you picked the same thing as the computer then you win
+            System.out.println("Computer picked " + rand + ". You Win!");
+            //if you picked the same thing as the computer then you win
         } else {
-            System.out.println("You lose (or picked an invalid input)"); //if you didn't pick the same number as the computer or picked something that wasn't an option
+            System.out.println("Computer picked " + rand + ". \nYou lose (or picked an invalid input)");
+            //if you didn't pick the same number as the computer or picked something that wasn't an option
             System.exit(1);
+        }
+    }
+    private static void saveToFile(String data) {
+        try {
+            File myObj = new File("blackjackData.txt");
+            FileWriter myWriter = new FileWriter(myObj,true);
+            String text = "\n";
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+                text += "// This file is for Statistical tracking and debugging purposes, please do not " +
+                        "edit, delete, or move this file //";
+            } else {
+                System.out.println("Save file already exists.");
+            }
+            myWriter.append(text);
+            myWriter.append(data);
+            System.out.println("Successfully saved game data.");
+            myWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e);
         }
     }
 }

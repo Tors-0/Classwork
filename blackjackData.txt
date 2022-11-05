@@ -1,0 +1,5 @@
+// This file is for Statistical tracking and debugging purposes, please do not edit, delete, or move this file //
+Blackjack.Dealer.Win
+Blackjack.Dealer.Win
+Blackjack.Dealer.Win
+Blackjack.Player.Win
