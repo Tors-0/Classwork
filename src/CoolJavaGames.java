@@ -1,3 +1,5 @@
+import org.lwjgl.vulkan.VkRenderPassSampleLocationsBeginInfoEXT;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -13,10 +15,11 @@ JAR build script: (execute in /src)
 
 public class CoolJavaGames {
     static Scanner scanny = new Scanner(System.in); // scanner will be used to interpret various user choices
-    static File myObj = new File("blackjackData.txt");
+    static File myObj = new File("gameData.txt"); // filepath for saved game data
     static Map<Integer,Integer> deck = new HashMap<>(); // map to store the integer value of each card in the deck
     // (key), and the number of that card remaining in the deck (value). This is used to prevent the same card from
     // being drawn more than 1 time, since that would be impossible in a real deck of cards
+    static int deckSize = 104; // can be used to change the size of the deck as needed. min: 52
     static int[] dealer = new int[5]; // stores the dealers hand, maxes at 5 bc of 5 card charlie rule
     static int dealerPos = 0; // stores the next blank index in dealers hand
     static int[] player = new int[5]; // stores the players hand
@@ -32,7 +35,6 @@ public class CoolJavaGames {
                 "\n2 : Blackjack \n3 : I don't want to play a game");
         System.out.print("Your choice: ");
         String choice = scanny.nextLine();
-
         // Check which choice you pick
         if ((Integer.parseInt(choice) == 0) || choice.equalsIgnoreCase("ROCK PAPER SCISSORS"))   {
             // If you pick rock paper scissors
@@ -56,30 +58,48 @@ public class CoolJavaGames {
             System.exit(1);
         }
     }
-    private static void gameStats() {
+    private static void gameStats() { // reads gameData.txt file
         try {
-            Scanner reader = new Scanner(myObj);
+            Scanner reader = new Scanner(myObj); // new scanner created for filepath
             String data;
-            int BJLosses = 0;
-            int BJWins = 0;
-            int BJPlays = 0;
-            while (reader.hasNextLine()) {
-                data = reader.nextLine();
-                if (data.contains("Blackjack")) {
-                    if (data.contains("Dealer.Win")) {
+            int BJLosses = 0; // number of losses in blackjack
+            int BJWins = 0; // number of wins in blackjack
+            int BJPlays = 0; // number of times blackjack was played
+            int RPSWins = 0;
+            int RPSNonWins = 0;
+            int RPSPlays = 0;
+            while (reader.hasNextLine()) { // while there are still more line in the file
+                data = reader.nextLine(); // read the next line
+                if (data.contains("Blackjack")) { // if the line applies to blackjack...
+                    if (data.contains("Dealer.Win")) { // ...and shows a dealer win
                         BJLosses++;
                         BJPlays++;
-                    } else if (data.contains("Player.Win")) {
+                    } else if (data.contains("Player.Win")) { // ...and shows a player win
                         BJWins++;
                         BJPlays++;
-                    } else if (data.contains("Both.Lose")) {
+                    } else if (data.contains("Both.Lose")) { // ...and shows a dual loss
                         BJPlays++;
                     }
                 }
+                if (data.contains("RPS")) { // if the line applies to blackjack...
+                    if (data.contains("Player.Win")) { // ...and shows a dealer win
+                        RPSWins++;
+                        RPSPlays++;
+                    } else if (data.contains("Player.NonWin")) { // ...and shows a player win
+                        RPSNonWins++;
+                        RPSPlays++;
+                    }
+                }
             }
-            double winPercent = BJWins / (double) BJPlays * 100;
-            double losePercent = BJLosses / (double) BJPlays * 100;
-            System.out.println("Blackjack statistics:");
+            double winPercent = RPSWins / (double) RPSPlays * 100;
+            double losePercent = RPSNonWins / (double) RPSPlays * 100;
+            System.out.println("\nRock Paper Scissors Statistics:");
+            System.out.println("Player Wins: " + RPSWins + " (~" + (int)winPercent + "%)");
+            System.out.println("Player Losses/Ties: " + RPSNonWins + " (~" + (int)losePercent + "%)");
+            System.out.println("Total plays: " + RPSPlays);
+            winPercent = BJWins / (double) BJPlays * 100;
+            losePercent = BJLosses / (double) BJPlays * 100;
+            System.out.println("\nBlackjack statistics:");
             System.out.println("Player wins: " + BJWins + " (~" + (int)winPercent + "%)");
             System.out.println("Dealer wins: " + BJLosses + " (~" + (int)losePercent + "%)");
             System.out.println("Total plays: " + BJPlays);
@@ -97,22 +117,31 @@ public class CoolJavaGames {
         //checks which hand you picked
         if ((hand.equalsIgnoreCase("ROCK")) && rand == 0) {
             System.out.println("Ai picked scissors, you win"); //Rock beats scissors so you beat the AI
+            saveToFile("RPS.Player.Win");
         } else if (hand.equalsIgnoreCase("PAPER") && rand == 1) {
             System.out.println("Ai picked rock, you win"); // paper beats rock so you beat the AI
+            saveToFile("RPS.Player.Win");
         } else if (hand.equalsIgnoreCase("SCISSORS") && rand == 2) {
             System.out.println("Ai picked paper, you win"); // scissors beat paper, so you win
-        } else {
-            System.out.println("You lose (or picked an invalid input)");
-            //if you lost or picked something that wasn't an option
+            saveToFile("RPS.Player.Win");
+        } else if (!(hand.equalsIgnoreCase("ROCK") || hand.equalsIgnoreCase("PAPER") ||
+                hand.equalsIgnoreCase("SCISSORS"))) {
+            System.out.println("Invalid Input!");
             System.exit(1);
+        }else {
+            System.out.println("You lose/tie");
+            //if you lost or picked something that wasn't an option
+            saveToFile("RPS.Player.NonWin");
+            System.exit(0);
         }
     }
     public static void beginBlackjack() { // prints rules and draws 2 cards to each player
-        for (int i = 1; i <= 52; i++) { // fills the deck map with default value of 4
+        for (int i = 1; i <= deckSize; i++) { // fills the deck map with default value of 1
             deck.put(i,1);
         }
-        System.out.println("\nThe Game Begins...\nHouse rules: " + ANSI_CYAN + "5 Card Charlie" + ANSI_RESET + ": If " +
-                "a player reaches 5 cards without going over 21, they win automatically.\n");
+        System.out.println("\nThe Game Begins...\nHouse rules:\n" + ANSI_CYAN + "\s\s\s5 Card Charlie" + ANSI_RESET +
+                ": If a player reaches 5 cards without going over 21, they win automatically.\nConfiguration:\n\s\s\s" +
+                " Decks currently in play: " + (deckSize/52) +"\n");
         drawCardPlayer();
         drawCardDealer();
         System.out.println("The dealer's face-up card is a(n) " + intToCard(dealer[0]));
@@ -160,12 +189,18 @@ public class CoolJavaGames {
         }
     }
     private static int cardValue(int n) { // always counts aces as 1s, used to determine smart value
+        while (n > 52) {
+            n -= 52;
+        }
         while (n > 13) {
             n -= 13;
         }
         return Math.min(n, 10);
     }
     private static int cardValue11(int n) { // always counts aces as 11s, used to determine smart value
+        while (n > 52) {
+            n -= 52;
+        }
         while (n > 13) {
             n -= 13;
         }
@@ -188,6 +223,10 @@ public class CoolJavaGames {
         return output;
     }
     private static String intToCard(int n) { // returns the name value of the card from the int
+        while (n > 52) {
+            // if there's more than one deck in play (>52 cards) cards must be taken down into 1-52 range for counting
+            n -= 52;
+        }
         int count = 0;
         while (n > 13) {
             // since cards can have any value from 1-52, the must be taken down into the 1-13 range for parsing
@@ -306,7 +345,7 @@ public class CoolJavaGames {
         }
     }
     private static void drawCardDealer() { // draws a card from the deck to the dealers hand
-        int choice = (int) (Math.random() * 52) + 1;
+        int choice = (int) (Math.random() * deckSize) + 1;
         if (deck.get(choice) > 0) {
             dealer[dealerPos] = choice;
             dealerPos++;
@@ -325,7 +364,7 @@ public class CoolJavaGames {
         }
     }
     private static void drawCardPlayer() { // draws a card from the deck to the players hand
-        int choice = (int) (Math.random() * 52) + 1;
+        int choice = (int) (Math.random() * deckSize) + 1;
         if (deck.get(choice) > 0) {
             player[playerPos] = choice;
             playerPos++;
