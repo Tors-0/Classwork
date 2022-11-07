@@ -1,5 +1,3 @@
-import org.lwjgl.vulkan.VkRenderPassSampleLocationsBeginInfoEXT;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -16,6 +14,7 @@ JAR build script: (execute in /src)
 public class CoolJavaGames {
     static Scanner scanny = new Scanner(System.in); // scanner will be used to interpret various user choices
     static File myObj = new File("gameData.txt"); // filepath for saved game data
+    // below this: static vars for blackjack vv
     static Map<Integer,Integer> deck = new HashMap<>(); // map to store the integer value of each card in the deck
     // (key), and the number of that card remaining in the deck (value). This is used to prevent the same card from
     // being drawn more than 1 time, since that would be impossible in a real deck of cards
@@ -24,6 +23,11 @@ public class CoolJavaGames {
     static int dealerPos = 0; // stores the next blank index in dealers hand
     static int[] player = new int[5]; // stores the players hand
     static int playerPos = 0; // stores the next blank index in players hand
+    // static vars for blackjack ^^
+    // static vars for ticktacktoe vv
+    static Map<String,Character> board = new HashMap<>(); // stores whether each space on TTT board has been played on yet
+    static Map<String,Integer> boardAI = new HashMap<>(); // used by AI to store opponents moves
+    // static vars for ticktacktoe ^^
     static final String ANSI_CYAN = "";
     // used for color coding of text, uncomment next line if your IDE supports ANSI color outputs in its terminal
     //ANSI_CYAN = "\u001B[36m";
@@ -32,7 +36,7 @@ public class CoolJavaGames {
     //ANSI_RESET = "\u001B[0m";
     public static void main(String[] args) {
         System.out.println("What game would you like to play?: \n0 : Rock Paper Scissors \n1 : Guess out of 3" +
-                "\n2 : Blackjack \n3 : I don't want to play a game");
+                "\n2 :  \n4 : I don't want to play a game");
         System.out.print("Your choice: ");
         String choice = scanny.nextLine();
         // Check which choice you pick
@@ -45,7 +49,10 @@ public class CoolJavaGames {
         } else if (Integer.parseInt(choice) == 2 || choice.equalsIgnoreCase("BLACKJACK")) {
             // If you choose Blackjack
             beginBlackjack();
-        } else if (Integer.parseInt(choice) == 3 || choice.equalsIgnoreCase("I DON'T WANT TO PLAY A GAME")) {
+        } else if (Integer.parseInt(choice) == 3) {
+            // if you chose ticktacktoe
+            beginTicTacToe();
+        } else if (Integer.parseInt(choice) == 4 || choice.equalsIgnoreCase("I DON'T WANT TO PLAY A GAME")) {
             //If you choose not to play a game
             System.out.print("Would you like to view statistics? (y/n): ");
             choice = scanny.next();
@@ -65,9 +72,9 @@ public class CoolJavaGames {
             int BJLosses = 0; // number of losses in blackjack
             int BJWins = 0; // number of wins in blackjack
             int BJPlays = 0; // number of times blackjack was played
-            int RPSWins = 0;
-            int RPSNonWins = 0;
-            int RPSPlays = 0;
+            int RPSWins = 0; // num of wins in rps
+            int RPSNonWins = 0; // num of losses in rps
+            int RPSPlays = 0; // num of total plays of rps
             while (reader.hasNextLine()) { // while there are still more line in the file
                 data = reader.nextLine(); // read the next line
                 if (data.contains("Blackjack")) { // if the line applies to blackjack...
@@ -81,11 +88,11 @@ public class CoolJavaGames {
                         BJPlays++;
                     }
                 }
-                if (data.contains("RPS")) { // if the line applies to blackjack...
-                    if (data.contains("Player.Win")) { // ...and shows a dealer win
+                if (data.contains("RPS")) { // if the line applies to rock paper scissors...
+                    if (data.contains("Player.Win")) { // ...and shows a player win
                         RPSWins++;
                         RPSPlays++;
-                    } else if (data.contains("Player.NonWin")) { // ...and shows a player win
+                    } else if (data.contains("Player.NonWin")) { // ...and shows a player loss/tie
                         RPSNonWins++;
                         RPSPlays++;
                     }
@@ -111,7 +118,7 @@ public class CoolJavaGames {
         //Generates AI hand
         int rand = (int) (Math.random() * 3);
 
-        System.out.println("Please pick a symbol, Rock, Paper, or scissors"); //asks which hand you would like to pick
+        System.out.println("Please pick a symbol, Rock, Paper, or Scissors"); //asks which hand you would like to pick
         String hand = scanny.nextLine(); //inputs your hand as a variable
 
         //checks which hand you picked
@@ -135,7 +142,24 @@ public class CoolJavaGames {
             System.exit(0);
         }
     }
-    public static void beginBlackjack() { // prints rules and draws 2 cards to each player
+    private static void beginTicTacToe() {
+        System.out.println("Columns (left to right) A, B, C. Rows (top to bottom) 1, 2, 3.");
+        TTTPlayer();
+    }
+    private static void TTTPlayer() {
+        System.out.print("Where do you want to play? (ex. b2): ");
+        String select = scanny.nextLine();
+        if (!board.containsKey(select.toLowerCase())) {
+            board.put(select.toLowerCase(), 'x');
+        } else {
+            System.out.println("That space is already full! Please choose another.");
+            TTTPlayer();
+        }
+    }
+    private static void TTTAI() {
+
+    }
+    private static void beginBlackjack() { // prints rules and draws 2 cards to each player
         for (int i = 1; i <= deckSize; i++) { // fills the deck map with default value of 1
             deck.put(i,1);
         }

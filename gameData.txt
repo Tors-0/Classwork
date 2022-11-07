@@ -39,3 +39,13 @@ RPS.Player.NonWin
 RPS.Player.NonWin
 RPS.Player.NonWin
 RPS.Player.NonWin
+RPS.Player.NonWin
+RPS.Player.Win
+RPS.Player.NonWin
+RPS.Player.Win
+Blackjack.Dealer.Win
+Blackjack.Player.Win
+Blackjack.Player.Win
+Blackjack.Dealer.Win
+Blackjack.Dealer.Win
+Blackjack.Player.Win
