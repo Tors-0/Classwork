@@ -36,7 +36,7 @@ public class CoolJavaGames {
     //ANSI_RESET = "\u001B[0m";
     public static void main(String[] args) {
         System.out.println("What game would you like to play?: \n0 : Rock Paper Scissors \n1 : Guess out of 3" +
-                "\n2 :  \n4 : I don't want to play a game");
+                "\n2 :  \n3 : TicTacToe (Incomplete)\n4 : I don't want to play a game");
         System.out.print("Your choice: ");
         String choice = scanny.nextLine();
         // Check which choice you pick
@@ -106,7 +106,7 @@ public class CoolJavaGames {
             System.out.println("Total plays: " + RPSPlays);
             winPercent = BJWins / (double) BJPlays * 100;
             losePercent = BJLosses / (double) BJPlays * 100;
-            System.out.println("\nBlackjack statistics:");
+            System.out.println("\nDefinitely not blackjack statistics:");
             System.out.println("Player wins: " + BJWins + " (~" + (int)winPercent + "%)");
             System.out.println("Dealer wins: " + BJLosses + " (~" + (int)losePercent + "%)");
             System.out.println("Total plays: " + BJPlays);
@@ -325,6 +325,9 @@ public class CoolJavaGames {
             System.out.println("You end your turn. Dealer begins playing...\n");
         } else if (userChoice.equalsIgnoreCase("hit") || userChoice.equalsIgnoreCase("h")) {
             drawCardPlayer();
+            playerTurn();
+        } else {
+            System.out.println("You picked an invalid option. Try again.");
             playerTurn();
         }
     }
