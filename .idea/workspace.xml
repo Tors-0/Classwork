@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.11.4-2">
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.11.7-1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gameData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoolJavaGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoolJavaGames.java" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +54,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -237,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667711737519</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="2022.11.7-1">
+      <created>1667842043299</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1667842043299</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,7 +280,8 @@
     <MESSAGE value="2022.11.4-6" />
     <MESSAGE value="2022.11.5-0 game data saved to file" />
     <MESSAGE value="2022.11.5-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.11.5-1" />
+    <MESSAGE value="2022.11.7-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.11.7-1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
