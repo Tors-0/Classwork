@@ -151,14 +151,26 @@ public class CoolJavaGames {
         String select = scanny.nextLine();
         if (!board.containsKey(select.toLowerCase())) {
             board.put(select.toLowerCase(), 'x');
+            TTTAI();
         } else {
             System.out.println("That space is already full! Please choose another.");
             TTTPlayer();
         }
     }
     private static void TTTAI() {
-
+        int rand = (int) (Math.random() * 3) + 1;
+        char randy = 'a';
+        int rand2 = (int) (Math.random() * 3) + 1;
+        if (rand == 1) {
+            randy = 'a';
+        } else if (rand == 2) {
+            randy = 'b';
+        } else if (rand == 3) {
+            randy = 'c';
+        }
+        String choice = "" + randy + rand2;
     }
+
     private static void beginBlackjack() { // prints rules and draws 2 cards to each player
         for (int i = 1; i <= deckSize; i++) { // fills the deck map with default value of 1
             deck.put(i,1);
