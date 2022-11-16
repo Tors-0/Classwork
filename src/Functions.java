@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Functions {
+  static Scanner scanny = new Scanner(System.in);
     public static String modChallenge(int num) {
         int a = num % 10;
         int b = num % 100 - a;
@@ -155,8 +156,25 @@ public class Functions {
         }
         return Math.min(f(x), g(x));
     }
+    public static int nthPrime(int n) {
+      int count = -1;
+      int result = -1;
+      for (int j = 1; count < n; j++) {
+        if (((factorial(j - 1) + 1) / j) % 1.0 == 0.0) {
+          count++;
+          result = j;
+        }
+      }
+      return result;
+    }
+  public static long factorial(int n) {
+    long result = n;
+    for (int i = n - 1; i > 0; i--) {
+      result *= i;
+    }
+    return result;
+  }
     public static void main(String[] args) {
-        double x = 5;
-        System.out.println(h(x));
+        System.out.println(factorial(scanny.nextInt()));
     }
 }
