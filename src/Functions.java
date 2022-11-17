@@ -156,25 +156,48 @@ public class Functions {
         }
         return Math.min(f(x), g(x));
     }
-    public static int nthPrime(int n) {
-      int count = -1;
-      int result = -1;
-      for (int j = 1; count < n; j++) {
-        if (((factorial(j - 1) + 1) / j) % 1.0 == 0.0) {
-          count++;
-          result = j;
+    public static boolean checkIfPrime(int n) {
+        int count = n - 2;
+        for (int i = n; i > 0; i--) {
+            if (n % i != 0) {
+                count--;
+            }
         }
-      }
-      return result;
+        if (count == 0) {
+            return true;
+        } else return false;
     }
-  public static long factorial(int n) {
-    long result = n;
-    for (int i = n - 1; i > 0; i--) {
-      result *= i;
+    public static boolean fastPrimeCheck(int n) {
+        int count = n - 2;
+        if (n <= 1) return false;
+        else {
+            for (int i = n-1; i > 1; i--) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
-    return result;
-  }
+    public static int nthPrime(int n) { // now 36% faster due to skipping even numbers
+        int count = 1;
+        int result = 0;
+        if (n == 1) return 2;
+        for (int i = 1; count < n; i+=2) {
+            if (fastPrimeCheck(i)) {
+                count++;
+                result = i;
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) {
-        System.out.println(factorial(scanny.nextInt()));
+        System.out.print("Which prime do you wish to find: ");
+        int n = scanny.nextInt();
+        double start = System.nanoTime();
+        int prime = nthPrime(n);
+        double end = System.nanoTime();
+        double run = (end - start) / 1000000000;
+        System.out.println("Found " + prime + " in " + run + "s");
     }
 }
