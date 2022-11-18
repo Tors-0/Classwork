@@ -167,8 +167,16 @@ public class Functions {
                 if (ns >= 1000) {
                     ns /= 1000;
                     suffix = " s";
-                    ns = Math.floor(ns * 100) / 100;
-                    return "" + ns + suffix;
+                    if (ns >= 60) {
+                        double sec = Math.floor(ns * 100) / 100;
+                        String out = "" + sec + " s)";
+                        ns /= 60;
+                        ns = Math.floor(ns * 100) / 100;
+                        return "" + ns + " minutes (" + out;
+                    } else {
+                        ns = Math.floor(ns * 100) / 100;
+                        return "" + ns + suffix;
+                    }
                 } else {
                     ns = Math.floor(ns * 100) / 100;
                     return "" + ns + suffix;

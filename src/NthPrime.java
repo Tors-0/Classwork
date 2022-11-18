@@ -42,12 +42,13 @@ public class NthPrime {
     }
     public static void main(String[] args) {
         // now 47.5% faster than the original code
-        System.out.print("Which prime do you wish to find: ");
+        System.out.print("Which prime do you wish to find?\nWARNING: Primes after the 10,000th will take " +
+                "exponentially longer.\nThis may take several minutes or more depending on your computer! : ");
         long n = scanny.nextInt();
         double start = System.nanoTime();
         long prime = nthPrime(n);
         double end = System.nanoTime();
         String run = Functions.nsToTime(end - start);
-        System.out.println("Found " + prime + " in ~" + run);
+        System.out.println("\nFound " + prime + " in ~" + run);
     }
 }
