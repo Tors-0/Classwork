@@ -44,7 +44,7 @@ public class NthPrime {
         // now 47.5% faster than the original code
         System.out.print("Which prime do you wish to find?\nWARNING: Primes after the 10,000th will take " +
                 "exponentially longer.\nThis may take several minutes or more depending on your computer! : ");
-        long n = scanny.nextInt();
+        long n = Integer.parseInt(scanny.nextLine().replaceAll(",",""));
         double start = System.nanoTime();
         long prime = nthPrime(n);
         double end = System.nanoTime();
