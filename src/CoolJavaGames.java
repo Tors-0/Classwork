@@ -144,7 +144,11 @@ public class CoolJavaGames {
     }
     private static void beginTicTacToe() {
         System.out.println("Columns (left to right) A, B, C. Rows (top to bottom) 1, 2, 3.");
-        TTTPlayer();
+        boolean victory = false;
+        while (!victory) {
+            TTTPlayer();
+            TTTAI();
+        }
     }
     private static void TTTPlayer() {
         System.out.print("Where do you want to play? (ex. b2): ");

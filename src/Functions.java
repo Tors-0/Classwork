@@ -156,48 +156,33 @@ public class Functions {
         }
         return Math.min(f(x), g(x));
     }
-    public static boolean checkIfPrime(int n) {
-        int count = n - 2;
-        for (int i = n; i > 0; i--) {
-            if (n % i != 0) {
-                count--;
-            }
-        }
-        if (count == 0) {
-            return true;
-        } else return false;
-    }
-    public static boolean fastPrimeCheck(int n) {
-        int count = n - 2;
-        if (n <= 1) return false;
-        else {
-            for (int i = n-1; i > 1; i--) {
-                if (n % i == 0) {
-                    return false;
+    public static String nsToTime(double ns) {
+        String suffix = " ns";
+        if (ns >= 1000) {
+            ns /= 1000;
+            suffix = " us";
+            if (ns >= 1000) {
+                ns /= 1000;
+                suffix = " ms";
+                if (ns >= 1000) {
+                    ns /= 1000;
+                    suffix = " s";
+                    ns = Math.floor(ns * 100) / 100;
+                    return "" + ns + suffix;
+                } else {
+                    ns = Math.floor(ns * 100) / 100;
+                    return "" + ns + suffix;
                 }
+            } else {
+                ns = Math.floor(ns * 100) / 100;
+                return "" + ns + suffix;
             }
-            return true;
+        } else {
+            ns = Math.floor(ns * 100) / 100;
+            return "" + ns + suffix;
         }
-    }
-    public static int nthPrime(int n) { // now 36% faster due to skipping even numbers
-        int count = 1;
-        int result = 0;
-        if (n == 1) return 2;
-        for (int i = 1; count < n; i+=2) {
-            if (fastPrimeCheck(i)) {
-                count++;
-                result = i;
-            }
-        }
-        return result;
     }
     public static void main(String[] args) {
-        System.out.print("Which prime do you wish to find: ");
-        int n = scanny.nextInt();
-        double start = System.nanoTime();
-        int prime = nthPrime(n);
-        double end = System.nanoTime();
-        double run = (end - start) / 1000000000;
-        System.out.println("Found " + prime + " in " + run + "s");
+        System.out.println(NthPrime.nthPrime(10000));
     }
 }

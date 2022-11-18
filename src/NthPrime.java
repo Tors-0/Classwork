@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class NthPrime {
     static Scanner scanny = new Scanner(System.in);
-    public static boolean checkIfPrime(long n) {
+    protected static boolean checkIfPrime(long n) {
         // original prime checker, checks every factor of n
         long count = n - 2;
         for (long i = n; i > 0; i--) {
@@ -12,7 +12,7 @@ public class NthPrime {
         }
         return count == 0;
     }
-    public static boolean fastPrimeCheck(long n) {
+    protected static boolean fastPrimeCheck(long n) {
         // only checks factors until it finds a number that is a factor of n
         // if it doesn't find any factors it returns true, but if it finds a factor it quits the loop and returns false
         // 30.8% faster than checkIfPrime due to this innovation
@@ -47,7 +47,7 @@ public class NthPrime {
         double start = System.nanoTime();
         long prime = nthPrime(n);
         double end = System.nanoTime();
-        double run = (end - start) / 1000000000;
-        System.out.println("Found " + prime + " in " + run + "s");
+        String run = Functions.nsToTime(end - start);
+        System.out.println("Found " + prime + " in ~" + run);
     }
 }
