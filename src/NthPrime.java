@@ -26,6 +26,13 @@ public class NthPrime {
             return true;
         }
     }
+    protected static boolean fasterPrimes(long n) {
+      if (n<=1) return false;
+      for (long i = 0; i < Math.sqrt(n); i++) {
+        if (n % i == 0) return false;
+      }
+      return true;
+    }
     public static long nthPrime(long n) {
         // check every number 1 at a time until it finds n primes, has been changed to only check odd numbers to
         // increase speed, which contributed an additional 24.1% speed-up to the seeking process
