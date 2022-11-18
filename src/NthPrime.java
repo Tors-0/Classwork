@@ -28,7 +28,7 @@ public class NthPrime {
     }
     protected static boolean fasterPrimes(long n) {
       if (n<=1) return false;
-      for (long i = 0; i < Math.sqrt(n); i++) {
+      for (long i = (long) Math.sqrt(n); i > 1; i--) {
         if (n % i == 0) return false;
       }
       return true;
@@ -40,7 +40,7 @@ public class NthPrime {
         long result = 0;
         if (n == 1) return 2;
         for (long i = 1; count < n; i+=2) {
-            if (fastPrimeCheck(i)) {
+            if (fasterPrimes(i)) {
                 count++;
                 result = i;
             }
