@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="10" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.11.17-1">
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.11.17-2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NthPrime.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NthPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NthPrime.java" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
@@ -71,6 +75,13 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="NthPrime" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NthPrime" />
+      <module name="Classwork" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Games.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/src/Games.jar" />
       <method v="2" />
@@ -265,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668731552466</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="2022.11.17-2">
+      <created>1668739121198</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1668739121198</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,7 +299,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2022.9.29-0" />
     <MESSAGE value="2022.9.29-1" />
     <MESSAGE value="2022.9.29-3 added linux64 lwjgl libs" />
     <MESSAGE value="2022.9.30-0" />
@@ -306,9 +323,19 @@
     <MESSAGE value="2022.11.9-0" />
     <MESSAGE value="2022.11.9-1" />
     <MESSAGE value="2022.11.17-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.11.17-1" />
+    <MESSAGE value="2022.11.17-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.11.17-2" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="ProcessAttachRunConfigurationType">
+        <watch expression="n" />
+        <watch expression="NthPrime.scanny" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Classwork$NthPrime.ic" NAME="NthPrime Coverage Results" MODIFIED="1668833226587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$CoolJavaGames.ic" NAME="CoolJavaGames Coverage Results" MODIFIED="1667538710030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$Unit2Project.ic" NAME="Unit2Project Coverage Results" MODIFIED="1665675308804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>

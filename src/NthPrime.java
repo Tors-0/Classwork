@@ -27,11 +27,13 @@ public class NthPrime {
         }
     }
     protected static boolean fasterPrimes(long n) {
-      if (n<=1) return false;
-      for (long i = (long) Math.sqrt(n); i > 1; i--) {
-        if (n % i == 0) return false;
-      }
-      return true;
+        // only checks for factors from 1 to sqrt(n) instead of 1 to n
+        // provides exponential speed increase over fastPrimeCheck
+        if (n % 2 == 0) return false;
+        for (long i = 3; i < Math.sqrt(n) + 1; i+=2) {
+            if (n % i == 0) return false;
+        }
+        return true;
     }
     public static long nthPrime(long n) {
         // check every number 1 at a time until it finds n primes, has been changed to only check odd numbers to
@@ -40,7 +42,7 @@ public class NthPrime {
         long result = 0;
         if (n < 1) return -1;
         if (n == 1) return 2;
-        for (long i = 1; count < n; i+=2) {
+        for (long i = 3; count < n; i+=2) {
             if (fasterPrimes(i)) {
                 count++;
                 result = i;
@@ -51,7 +53,8 @@ public class NthPrime {
     public static void main(String[] args) {
         // now 47.5% faster than the original code
         System.out.print("Which prime do you wish to find?\nWARNING: Primes after the 500,000th will take " +
-                "exponentially longer.\nThis may take several minutes or more depending on your computer! : ");
+                "exponentially longer.\nAround the 4,000,000th prime will take about 10-20 minutes.\nThis may take " +
+                "several minutes more or less depending on your computer! : ");
         long n = Integer.parseInt(scanny.nextLine().replaceAll(",",""));
         double start = System.nanoTime();
         long prime = nthPrime(n);
