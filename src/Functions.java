@@ -160,7 +160,7 @@ public class Functions {
         String suffix = " ns";
         if (ns >= 1000) {
             ns /= 1000;
-            suffix = " us";
+            suffix = " \u00b5s";
             if (ns >= 1000) {
                 ns /= 1000;
                 suffix = " ms";

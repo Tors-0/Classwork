@@ -29,7 +29,6 @@ public class NthPrime {
     protected static boolean fasterPrimes(long n) {
         // only checks for factors from 1 to sqrt(n) instead of 1 to n
         // provides exponential speed increase over fastPrimeCheck
-        if (n % 2 == 0) return false;
         for (long i = 3; i < Math.sqrt(n) + 1; i+=2) {
             if (n % i == 0) return false;
         }
