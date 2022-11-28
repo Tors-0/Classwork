@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/licenses" />
       <excludeFolder url="file://$MODULE_DIR$/finch-lib" />
       <excludeFolder url="file://$MODULE_DIR$/src/com/birdbraintechnologies" />
+      <excludeFolder url="file://$MODULE_DIR$/src/com" />
     </content>
     <content url="file://$MODULE_DIR$/out" />
     <orderEntry type="inheritedJdk" />

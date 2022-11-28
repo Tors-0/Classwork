@@ -159,38 +159,35 @@ public class Functions {
     public static String nsToTime(double ns) {
         String suffix = " ns";
         if (ns >= 1000) {
-            ns /= 1000;
+            double us = ns / 1000;
             suffix = " \u00b5s";
-            if (ns >= 1000) {
-                ns /= 1000;
+            if (us >= 1000) {
+                double ms =  us / 1000;
                 suffix = " ms";
-                if (ns >= 1000) {
-                    ns /= 1000;
+                if (ms >= 1000) {
+                    double s = ms / 1000;
                     suffix = " s";
-                    if (ns >= 60) {
-                        double sec = Math.floor(ns * 100) / 100;
-                        String out = "" + sec + " s)";
-                        ns /= 60;
-                        ns = Math.floor(ns * 100) / 100;
-                        return "" + ns + " minutes (" + out;
+                    if (s >= 60) {
+                        s = Math.floor(s * 100) / 100;
+                        String out = "" + s + " s)";
+                        double min = s / 60;
+                        min = Math.floor(min * 100) / 100;
+                        return "" + min + " minutes (" + out;
                     } else {
-                        ns = Math.floor(ns * 100) / 100;
-                        return "" + ns + suffix;
+                        s = Math.floor(s * 100) / 100;
+                        return "" + s + suffix;
                     }
                 } else {
-                    ns = Math.floor(ns * 100) / 100;
-                    return "" + ns + suffix;
+                    ms = Math.floor(ms * 100) / 100;
+                    return "" + ms + suffix;
                 }
             } else {
-                ns = Math.floor(ns * 100) / 100;
-                return "" + ns + suffix;
+                us = Math.floor(us * 100) / 100;
+                return "" + us + suffix;
             }
         } else {
             ns = Math.floor(ns * 100) / 100;
             return "" + ns + suffix;
         }
-    }
-    public static void main(String[] args) {
-        System.out.println(NthPrime.nthPrime(10000));
     }
 }
