@@ -142,6 +142,7 @@ public class Functions {
                 count--;
             }
         }
+        n = Math.floor(n * 100) / 100;
         return n + "e" + count;
     }
     public static double f(double x) {
@@ -189,5 +190,38 @@ public class Functions {
             ns = Math.floor(ns * 100) / 100;
             return "" + ns + suffix;
         }
+    }
+    public static String numToMil(double n) {
+        int count = 0;
+        while (n >= 1000) {
+            if (count >= 10) break;
+            n /= 1000.0;
+            count++;
+            n = Math.floor(n * 10) / 10;
+        }
+        if (count == 0) {
+            return "" + n;
+        } else if (count == 1) {
+            return "" + n + "k";
+        } else if (count == 2) {
+            return "" + n + "m";
+        } else if (count == 3) {
+            return "" + n + "b";
+        } else if (count == 4) {
+            return "" + n + "q";
+        } else if (count == 5) {
+            return "" + n + "Q";
+        } else if (count == 6) {
+            return "" + n + "s";
+        } else if (count == 7) {
+            return "" + n + "S";
+        } else if (count == 8) {
+            return "" + n + "o";
+        } else if (count == 9) {
+            return "" + n + "n";
+        } else if (count == 10) {
+            return "" + n + "d";
+        }
+        return "error";
     }
 }

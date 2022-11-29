@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class NthPrime {
     static Scanner scanny = new Scanner(System.in);
-    static long factorsChecked = 0;
+    static long evals = 0;
     protected static boolean checkIfPrime(long n) {
         // original prime checker, checks every factor of n
         long found = n - 2;
@@ -31,27 +31,34 @@ public class NthPrime {
         // check every number 1 at a time until it finds n primes, has been changed to only check odd numbers to
         // increase speed, which contributed an additional 24.1% speed-up to the seeking process
         long result = -1;
-        for (long i = start; foundPrimes < seek; i += 2) {
+        long mod = seek / 10;
+        for (long i = start; foundPrimes < seek; i++) {
+            evals++;
             // only checks for factors from 1 to sqrt(n) instead of 1 to n
             // provides exponential speed increase over fastPrimeCheck
             boolean primality = true;
             double max = Math.sqrt(i) + 1;
-            for (long j = 3; j < max; j += 2) {
-                factorsChecked++;
-                if (i % j == 0) {
-                    primality = false;
-                    break;
+            if (i % 2 != 0) {
+                for (long j = 3; j < max; j += 2) {
+                    evals++;
+                    if (i % j == 0) {
+                        primality = false;
+                        break;
+                    }
                 }
-            }
+            } else primality = false;
             if (primality) {
                 foundPrimes++;
                 result = i;
+            }
+            if (i % mod == 0) {
+                System.out.print(".");
             }
         }
         return result;
     }
     public static long bin100k(long seek, long found) {
-        // binning method that divides primes into bins of 100k to make seeking faster
+        // binning method that divides primes into bins of 100k primes to make seeking faster
         int[] a = {};
         if (seek < 100000) {
             return nthPrime(seek,1,3);
@@ -80,15 +87,23 @@ public class NthPrime {
         System.out.print(
                 "Which prime do you wish to find?\nWARNING: " +
                 "This may take several minutes depending on your computer! : ");
-        long n = Integer.parseInt(scanny.nextLine().replaceAll(",",""));
+        String in = scanny.nextLine().replaceAll(",","");
+        System.out.print("Preprocessing... ");
+        long n = Integer.parseInt(in);
         long prime;
+
+        System.out.print("Done!\nSeeking");
         double start = System.nanoTime();
         if (n < 1) prime = -1;
         else if (n == 1) prime = 2;
-        else prime = bin100k(n,0);
+        else prime = nthPrime(n,1,3);
         double end = System.nanoTime();
+
+        System.out.print("Done!\nPost-processing... ");
         String run = Functions.nsToTime(end - start);
+        String evaluated = Functions.numToMil(evals);
+        System.out.print("Done!\n");
         System.out.println("\nFound " + prime + " in ~" + run);
-        System.out.println("Checked " + factorsChecked + " factors during runtime!");
+        System.out.println("Evaluated ~" + evaluated + " factors/numbers during runtime!");
     }
 }
