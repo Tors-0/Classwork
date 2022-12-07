@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Functions {
@@ -223,5 +225,39 @@ public class Functions {
             return "" + n + "d";
         }
         return "error";
+    }
+    public static String avgStrings(String a, String b, String c) {
+        char[] chars = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w',
+                'x','y','z'};
+        Map<Character, Integer> ints = new HashMap<>();
+        for (int i = 0; i < 26; i++) {
+            ints.put(chars[i],i);
+        }
+        int aa = a.length();
+        int bb = b.length();
+        int cc = c.length();
+        int len = Math.min(Math.min(aa,bb),cc);
+        int aaa;
+        int bbb;
+        int ccc;
+        String output = "";
+        for (int i = 0; i < len; i++) {
+            aaa = ints.get(a.charAt(i));
+            bbb = ints.get(b.charAt(i));
+            ccc = ints.get(c.charAt(i));
+            output += "" + chars[(int) Math.round((aaa + bbb + ccc) / 3.0)];
+        }
+        if (aa <= len && bb <= len && cc <= len) {
+            return output;
+        } else {
+            aa -= len;
+            bb -= len;
+            cc -= len;
+            return output;
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println("avgStrings(\"raeeeeethorf\",\"unicorndave\",\"meowhuishdndleopard\")");
+        System.out.print(avgStrings("raeeeeethorf","unicorndave","meowhuishdndleopard"));
     }
 }
