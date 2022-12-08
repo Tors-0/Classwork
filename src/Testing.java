@@ -11,6 +11,14 @@ public class Testing {
         return false;
     }
     public static void main(String[] args) {
-        System.out.print(MathWrapper.gcf(33,11));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
+        System.out.print((int) ((Math.random() * 3) + 1));
     }
 }

@@ -139,7 +139,17 @@ public class CoolJavaGames {
             System.out.println("You lose/tie");
             //if you lost or picked something that wasn't an option
             saveToFile("RPS.Player.NonWin");
-            System.exit(0);
+        }
+        String input = "";
+        while (!input.equalsIgnoreCase("yes") && !input.equalsIgnoreCase("no")) {
+            System.out.print("Would you like to play again? (yes/no): ");
+            input = scanny.nextLine();
+        }
+        if (input.equalsIgnoreCase("yes")) {
+            beginRPS();
+        } else if (input.equalsIgnoreCase("no")) {
+            System.out.println("Thanks for playing! Bye...");
+            System.exit(382);
         }
     }
     private static void beginTicTacToe() {
