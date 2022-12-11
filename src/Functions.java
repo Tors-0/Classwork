@@ -228,9 +228,9 @@ public class Functions {
     }
     public static String avgStrings(String a, String b, String c) {
         char[] chars = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w',
-                'x','y','z'};
+                'x','y','z',' '};
         Map<Character, Integer> ints = new HashMap<>();
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < chars.length; i++) {
             ints.put(chars[i],i);
         }
         int aa = a.length();
@@ -257,7 +257,7 @@ public class Functions {
         }
     }
     public static void main(String[] args) {
-        System.out.println("avgStrings(\"raeeeeethorf\",\"unicorndave\",\"meowhuishdndleopard\")");
-        System.out.print(avgStrings("raeeeeethorf","unicorndave","meowhuishdndleopard"));
+        System.out.println("avgStrings(\"raeeeee thorf\",\"unicorndave\",\"meowhuish dnd leopard\")");
+        System.out.print(avgStrings("raeeeee thorf","unicorndave","meowhuish dnd leopard"));
     }
 }
