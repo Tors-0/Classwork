@@ -35,8 +35,8 @@ public class CoolJavaGames {
     // used for color coding of text, uncomment next line if your IDE supports ANSI color outputs in its terminal
     //ANSI_RESET = "\u001B[0m";
     public static void main(String[] args) {
-        System.out.println("What game would you like to play?: \n0 : Rock Paper Scissors \n1 : Guess out of 3" +
-                "\n2 :  \n3 : TicTacToe (Incomplete)\n4 : I don't want to play a game");
+        System.out.println("What game would you like to play?: \n0 : Rock Paper Scissors \n1 : dont select" +
+                "\n2 : dont select \n3 : dont select\n4 : I don't want to play a game");
         System.out.print("Your choice: ");
         String choice = scanny.nextLine();
         // Check which choice you pick
@@ -114,22 +114,36 @@ public class CoolJavaGames {
             System.out.println("An error occurred: " + e);
         }
     }
+    static int rpsWin = 0;
+    static int rpsLose = 0;
     private static void beginRPS() {
+        if (rpsWin >= 2) {
+            System.out.println("You have won 2 out of 3. You won overall!");
+            System.exit(4534);
+        } else if (rpsLose >= 2) {
+            System.out.println("Computer has won 2 out of 3. You lose overall!");
+            System.exit(2892);
+        }
         //Generates AI hand
         int rand = (int) (Math.random() * 3);
 
-        System.out.println("Please pick a symbol, Rock, Paper, or Scissors"); //asks which hand you would like to pick
-        String hand = scanny.nextLine(); //inputs your hand as a variable
-
+        String hand = "";
+        while (!hand.equalsIgnoreCase("rock") && !hand.equalsIgnoreCase("paper") && !(hand.equalsIgnoreCase("scissors"))) {
+            System.out.println("Please pick Rock, Paper, or Scissors"); //asks which hand you would like to pick
+            hand = scanny.nextLine(); //inputs your hand as a variable
+        }
         //checks which hand you picked
         if ((hand.equalsIgnoreCase("ROCK")) && rand == 0) {
             System.out.println("Ai picked scissors, you win"); //Rock beats scissors so you beat the AI
+            rpsWin++;
             saveToFile("RPS.Player.Win");
         } else if (hand.equalsIgnoreCase("PAPER") && rand == 1) {
             System.out.println("Ai picked rock, you win"); // paper beats rock so you beat the AI
+            rpsWin++;
             saveToFile("RPS.Player.Win");
         } else if (hand.equalsIgnoreCase("SCISSORS") && rand == 2) {
             System.out.println("Ai picked paper, you win"); // scissors beat paper, so you win
+            rpsWin++;
             saveToFile("RPS.Player.Win");
         } else if (!(hand.equalsIgnoreCase("ROCK") || hand.equalsIgnoreCase("PAPER") ||
                 hand.equalsIgnoreCase("SCISSORS"))) {
@@ -137,6 +151,7 @@ public class CoolJavaGames {
             System.exit(1);
         }else {
             System.out.println("You lose/tie");
+            rpsLose++;
             //if you lost or picked something that wasn't an option
             saveToFile("RPS.Player.NonWin");
         }

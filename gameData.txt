@@ -68,3 +68,7 @@ RPS.Player.NonWin
 RPS.Player.NonWin
 RPS.Player.NonWin
 RPS.Player.Win
+RPS.Player.NonWin
+RPS.Player.Win
+RPS.Player.NonWin
+RPS.Player.NonWin
