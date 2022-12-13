@@ -2,15 +2,20 @@ import java.util.Scanner;
 
 public class EnglishProject {
     static Scanner input = new Scanner(System.in);
+
     public static void clear() {
         System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
+
     public static void waitForEnter() {
         System.out.print("Press [Enter] to continue ->");
-        try{System.in.read();}
-        catch (Exception ignored) {}
+        try {
+            System.in.read();
+        } catch (Exception ignored) {
+        }
         System.out.println();
     }
+
     public static void main(String[] args) {
         System.out.println("Welcome to the Civil War town simulator! \u00a9 2022 by Rae Johnston.");
         waitForEnter();
@@ -20,6 +25,7 @@ public class EnglishProject {
         waitForEnter();
         railStation();
     }
+
     public static void townSquare() {
         clear();
         // read wanted posters +
@@ -43,6 +49,7 @@ public class EnglishProject {
             firstStreet();
         }
     }
+
     public static void bountyBoard() {
         clear();
         // return to town square after end dialogue
@@ -53,6 +60,7 @@ public class EnglishProject {
         waitForEnter();
         townSquare();
     }
+
     public static void firstStreet() {
         clear();
         // connections: library, general store, town square
@@ -72,6 +80,7 @@ public class EnglishProject {
             generalStore();
         }
     }
+
     public static void library() {
         clear();
         // talk to librarian, exit to first st
@@ -88,6 +97,7 @@ public class EnglishProject {
             firstStreet();
         }
     }
+
     public static void librarian() {
         clear();
         // talk to librarian, exit to library after convo finishes
@@ -96,6 +106,7 @@ public class EnglishProject {
         waitForEnter();
         library();
     }
+
     public static void cityHall() {
         clear();
         // talk to mayor
@@ -113,6 +124,7 @@ public class EnglishProject {
             townSquare();
         }
     }
+
     public static void mayor() {
         clear();
         // talk to the mayor
@@ -121,6 +133,7 @@ public class EnglishProject {
         waitForEnter();
         cityHall();
     }
+
     public static void railStation() {
         clear();
         // talk to station master, read national news, or exit to main st
@@ -141,23 +154,27 @@ public class EnglishProject {
             stationMaster();
         }
     }
+
     public static void stationMaster() {
         clear();
         // talk to station master, exits to rail station when convo ends
-        // TODO: 12/9/22 station master what are your political views 
+        // TODO: 12/9/22 station master what are your political views
 
         waitForEnter();
         railStation();
     }
+
     public static void nationalNews() {
         clear();
         // read national news, exits to rail station when dialogue ends
         System.out.println("National News:\n(looks like theres nothing here yet)");
-        // TODO: 12/9/22 display news events based on number of times interacted with news board 
+        // TODO: 12/9/22 display news events based on number of times interacted with
+        // news board
         System.out.println("\nLooks like that's all the news for today!");
         waitForEnter();
         railStation();
     }
+
     public static void mainStreet() {
         clear();
         // enter rail station, enter post office, enter town square
@@ -178,22 +195,57 @@ public class EnglishProject {
             postOffice();
         }
     }
+
     public static void tavern() {
         clear();
         // travelers from many places stop here
         // talk to bartender or patrons
+        System.out.println(
+                "Would you like to talk to the bartender (0), the bar patrons (1), or exit to Town Square (2)");
+        int choice = 9;
+        while (choice != 0 && choice != 1 && choice != 2) {
+            System.out.print("Environment: What would you like to do (0/1/2) -> ");
+            choice = input.nextInt();
+            System.out.println();
+        }
+        if (choice == 0) {
+            bartender();
+        } else if (choice == 1) {
+            barPatrons();
+        } else {
+            townSquare();
+        }
+    }
+    public static void bartender() {
+        clear();
+        // talk to bartender, exits to tavern when convo ends
+
         
     }
+
+    public static void barPatrons() {
+        clear();
+        // talk to bar patrons, exits to tavern when convo ends
+        // TODO 12/13/2022 decide which patrons are present on a given day
+        
+
+    }
+
     public static void postOffice() {
         clear();
         // news from nearby towns comes here first
         // read newspapers or read mail
-        
+
     }
+
     public static void generalStore() {
         clear();
         // nothing here yet, cosmetic building
+
+    }
+    public static void church() {
+        clear();
+        // talk to pastor or exit to 
         
     }
-    
 }
