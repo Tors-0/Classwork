@@ -1,8 +1,17 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Scanner;
 
 public class EnglishProject {
     static Scanner input = new Scanner(System.in);
-
+    static double rand = Math.random()+1;
+    private static int @NotNull [] seed(int n) {
+        int[] out = new int[3];
+        out[0] = (int) (Math.pow(n,rand) * n + 0.5) % 10;
+        out[1] = (int) (n * rand + 0.5) % 10;
+        out[2] = (int) (Math.sqrt(n) / rand + 0.5) % 10;
+        return out;
+    }
     public static void clear() {
         System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
@@ -11,8 +20,7 @@ public class EnglishProject {
         System.out.print("Press [Enter] to continue ->");
         try {
             System.in.read();
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
         System.out.println();
     }
 
@@ -28,12 +36,13 @@ public class EnglishProject {
 
     public static void townSquare() {
         clear();
-        // read wanted posters +
+        //
         System.out.println("You are now in the Town Square. From here you can read the Bounty Board (0), enter City " +
-                "Hall (1), enter the Tavern (2), go to Main St (3), or go to First St (4)");
+                "Hall (1), enter the Tavern (2), go to East Main St (3), go to First St (4), or go to West Main St " +
+                "(5)");
         int choice = 9;
-        while (choice != 0 && choice != 1 && choice != 2 && choice != 3 && choice != 4) {
-            System.out.print("Environment: What would you like to do (0/1/2/3/4) -> ");
+        while (choice != 0 && choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5) {
+            System.out.print("Environment: What would you like to do (0/1/2/3/4/5) -> ");
             choice = input.nextInt();
             System.out.println();
         }
@@ -44,9 +53,29 @@ public class EnglishProject {
         } else if (choice == 2) {
             tavern();
         } else if (choice == 3) {
-            mainStreet();
-        } else {
+            mainStreetE();
+        } else if (choice == 4) {
             firstStreet();
+        } else {
+            mainStreetW();
+        }
+    }
+
+    private static void mainStreetW() {
+        clear();
+        // go to church or town square
+        System.out.println("You are now on West Main St. From here you can enter the Church (0) or go to Town Square " +
+                "(1)");
+        int choice = 9;
+        while (choice != 0 && choice != 1 && choice != 2) {
+            System.out.print("Environment: What would you like to do (0/1/2) -> ");
+            choice = input.nextInt();
+            System.out.println();
+        }
+        if (choice == 0) {
+            church();
+        } else {
+            townSquare();
         }
     }
 
@@ -128,7 +157,7 @@ public class EnglishProject {
     public static void mayor() {
         clear();
         // talk to the mayor
-        System.out.println("Mayor: Hello! I'm terribly busy now, do you need something?");
+        System.out.println("Mayor: Hello! I'm terribly busy now.");
 
         waitForEnter();
         cityHall();
@@ -136,10 +165,10 @@ public class EnglishProject {
 
     public static void railStation() {
         clear();
-        // talk to station master, read national news, or exit to main st
+        // talk to station master, read national news, or exit to e main st
         // news from across the country found here
-        System.out.println("You are in the Rail Station.\nFrom here you can go to Main St (0), read national news (1)" +
-                ", or talk to the station master (2)");
+        System.out.println("You are in the Rail Station.\nFrom here you can go to East Main St (0), read national " +
+                "news (1), or talk to the station master (2)");
         int choice = 9;
         while (choice != 0 && choice != 1 && choice != 2) {
             System.out.print("Environment: What would you like to do (0/1/2) -> ");
@@ -147,18 +176,20 @@ public class EnglishProject {
             System.out.println();
         }
         if (choice == 0) {
-            mainStreet();
+            mainStreetE();
         } else if (choice == 1) {
             nationalNews();
         } else {
             stationMaster();
         }
     }
-
+    static int stationMasterInt = 0;
     public static void stationMaster() {
         clear();
         // talk to station master, exits to rail station when convo ends
         // TODO: 12/9/22 station master what are your political views
+        stationMasterInt += Math.random() * 3;
+        int interaction = seed(stationMasterInt)[(int)(Math.random() * 3)];
 
         waitForEnter();
         railStation();
@@ -175,11 +206,11 @@ public class EnglishProject {
         railStation();
     }
 
-    public static void mainStreet() {
+    public static void mainStreetE() {
         clear();
         // enter rail station, enter post office, enter town square
-        System.out.println("You are now on main street. From here you can go to Rail Station (0), Town Square (1), or" +
-                " enter Post Office (2)");
+        System.out.println("You are now on East Main Street. From here you can go to Rail Station (0), Town Square " +
+                "(1), or enter Post Office (2)");
 
         int choice = 9;
         while (choice != 0 && choice != 1 && choice != 2) {
@@ -201,7 +232,7 @@ public class EnglishProject {
         // travelers from many places stop here
         // talk to bartender or patrons
         System.out.println(
-                "Would you like to talk to the bartender (0), the bar patrons (1), or exit to Town Square (2)");
+                "Would you like to talk to the Bartender (0), the Bar Patrons (1), or exit to Town Square (2)");
         int choice = 9;
         while (choice != 0 && choice != 1 && choice != 2) {
             System.out.print("Environment: What would you like to do (0/1/2) -> ");
@@ -245,7 +276,7 @@ public class EnglishProject {
     }
     public static void church() {
         clear();
-        // talk to pastor or exit to 
+        // talk to pastor or exit to west main st
         
     }
 }
