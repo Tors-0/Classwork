@@ -4,19 +4,11 @@ import java.util.Scanner;
 
 public class EnglishProject {
     static Scanner input = new Scanner(System.in);
-    static double rand = Math.random()+1;
-    private static int @NotNull [] seed(int n) {
-        int[] out = new int[3];
-        out[0] = (int) (Math.pow(n,rand) * n + 0.5) % 10;
-        out[1] = (int) (n * rand + 0.5) % 10;
-        out[2] = (int) (Math.sqrt(n) / rand + 0.5) % 10;
-        return out;
-    }
-    public static void clear() {
+    public static void clear() { // done
         System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 
-    public static void waitForEnter() {
+    public static void waitForEnter() { // done
         System.out.print("Press [Enter] to continue ->");
         try {
             System.in.read();
@@ -24,7 +16,7 @@ public class EnglishProject {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // done
         System.out.println("Welcome to the Civil War town simulator! \u00a9 2022 by Rae Johnston.");
         waitForEnter();
         System.out.println("You'll be playing as a character in a small town in Delaware during the civil war.\n" +
@@ -33,7 +25,6 @@ public class EnglishProject {
         waitForEnter();
         railStation();
     }
-
     public static void townSquare() {
         clear();
         //
@@ -61,7 +52,7 @@ public class EnglishProject {
         }
     }
 
-    private static void mainStreetW() {
+    private static void mainStreetW() { // done
         clear();
         // go to church or town square
         System.out.println("You are now on West Main St. From here you can enter the Church (0) or go to Town Square " +
@@ -79,7 +70,7 @@ public class EnglishProject {
         }
     }
 
-    public static void bountyBoard() {
+    public static void bountyBoard() { // done
         clear();
         // return to town square after end dialogue
         System.out.println("Bounty Board:\nAny Persons found to be Aiding in the Escape of Slaves :" +
@@ -90,7 +81,7 @@ public class EnglishProject {
         townSquare();
     }
 
-    public static void firstStreet() {
+    public static void firstStreet() { // done
         clear();
         // connections: library, general store, town square
         System.out.println("You are now on First Street. From here you can go to Town Square (0), the Library (1), or" +
@@ -110,7 +101,7 @@ public class EnglishProject {
         }
     }
 
-    public static void library() {
+    public static void library() { // done
         clear();
         // talk to librarian, exit to first st
         System.out.println("You are now in the Library. You can talk to the Librarian (0) or exit to First Street (1)");
@@ -136,7 +127,7 @@ public class EnglishProject {
         library();
     }
 
-    public static void cityHall() {
+    public static void cityHall() { // done
         clear();
         // talk to mayor
         char choice = ' ';
@@ -154,16 +145,15 @@ public class EnglishProject {
         }
     }
 
-    public static void mayor() {
+    public static void mayor() { // done
         clear();
         // talk to the mayor
-        System.out.println("Mayor: Hello! I'm terribly busy now.");
-
+        System.out.println("Mayor: Hello! I'm afraid I'm terribly busy right now.");
         waitForEnter();
         cityHall();
     }
 
-    public static void railStation() {
+    public static void railStation() { // done
         clear();
         // talk to station master, read national news, or exit to e main st
         // news from across the country found here
@@ -189,7 +179,6 @@ public class EnglishProject {
         // talk to station master, exits to rail station when convo ends
         // TODO: 12/9/22 station master what are your political views
         stationMasterInt += Math.random() * 3;
-        int interaction = seed(stationMasterInt)[(int)(Math.random() * 3)];
 
         waitForEnter();
         railStation();
@@ -206,12 +195,11 @@ public class EnglishProject {
         railStation();
     }
 
-    public static void mainStreetE() {
+    public static void mainStreetE() { // done
         clear();
         // enter rail station, enter post office, enter town square
         System.out.println("You are now on East Main Street. From here you can go to Rail Station (0), Town Square " +
                 "(1), or enter Post Office (2)");
-
         int choice = 9;
         while (choice != 0 && choice != 1 && choice != 2) {
             System.out.print("Environment: What would you like to do (0/1/2) -> ");
@@ -227,7 +215,7 @@ public class EnglishProject {
         }
     }
 
-    public static void tavern() {
+    public static void tavern() { // done
         clear();
         // travelers from many places stop here
         // talk to bartender or patrons
@@ -274,9 +262,26 @@ public class EnglishProject {
         // nothing here yet, cosmetic building
 
     }
-    public static void church() {
+    public static void church() { // done
         clear();
         // talk to pastor or exit to west main st
-        
+        System.out.println("You are now in the Church. You can talk to the Pastor (0) or exit to West Main Street (1)");
+        int choice = 9;
+        while (choice != 0 && choice != 1) {
+            System.out.print("Environment: What would you like to do (0/1) -> ");
+            choice = input.nextInt();
+            System.out.println();
+        }
+        if (choice == 0) {
+            pastor();
+        } else {
+            mainStreetW();
+        }
+    }
+    public static void pastor() {
+        clear();
+
+
+
     }
 }
