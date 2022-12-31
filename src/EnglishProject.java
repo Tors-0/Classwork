@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Scanner;
 
 public class EnglishProject {
@@ -220,7 +218,8 @@ public class EnglishProject {
         // travelers from many places stop here
         // talk to bartender or patrons
         System.out.println(
-                "Would you like to talk to the Bartender (0), the Bar Patrons (1), or exit to Town Square (2)");
+                "You are now in the Tavern.\nWould you like to talk to the Bartender (0), the Bar Patrons (1), or " +
+                        "exit to Town Square (2)");
         int choice = 9;
         while (choice != 0 && choice != 1 && choice != 2) {
             System.out.print("Environment: What would you like to do (0/1/2) -> ");
@@ -238,16 +237,35 @@ public class EnglishProject {
     public static void bartender() {
         clear();
         // talk to bartender, exits to tavern when convo ends
-
-        
+        System.out.println("You are now talking to the bartender:");
+        System.out.println("Bartender: Howdy. I see you eyeing those other patrons over there, lemme tell ya, they're" +
+                " a gossiping bunch, but they all seem to have the same story.");
+        waitForEnter();
+        tavern();
     }
-
     public static void barPatrons() {
         clear();
         // talk to bar patrons, exits to tavern when convo ends
-        // TODO 12/13/2022 decide which patrons are present on a given day
-        
-
+        int rand = (int) (Math.random() * 3) + 1;
+        String patron;
+        if (rand == 1) {
+            patron = "Jonathan";
+        } else if (rand == 2) {
+            patron = "Elisabeth";
+        } else {
+            patron = "Georg";
+        }
+        int randy = (int) (Math.random() * 3) + 1;
+        String story;
+        if (randy == 1) {
+            story = "I hear that old hag Gertrude ";
+        } else if (randy == 2) {
+            story = "";
+        } else {
+            story = "";
+        }
+        System.out.println("Now talking to " + patron);
+        System.out.println(patron + ": " + story);
     }
 
     public static void postOffice() {
