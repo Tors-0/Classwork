@@ -23,7 +23,7 @@ public class EnglishProject {
         waitForEnter();
         railStation();
     }
-    public static void townSquare() {
+    public static void townSquare() { // done
         clear();
         //
         System.out.println("You are now in the Town Square. From here you can read the Bounty Board (0), enter City " +
@@ -116,10 +116,12 @@ public class EnglishProject {
         }
     }
 
-    public static void librarian() {
+    public static void librarian() { // done
         clear();
         // talk to librarian, exit to library after convo finishes
-
+        System.out.println("Librarian: If someone you know ever needs a place to shelter from a certain bounty, just " +
+                "send them this way and I'll make sure they're in good hands.\n");
+        stationMasterInt++;
         System.out.print("Now returning to library, ");
         waitForEnter();
         library();
@@ -172,23 +174,28 @@ public class EnglishProject {
         }
     }
     static int stationMasterInt = 0;
-    public static void stationMaster() {
+    public static void stationMaster() { // done
         clear();
         // talk to station master, exits to rail station when convo ends
-        // TODO: 12/9/22 station master what are your political views
-        stationMasterInt += Math.random() * 3;
-
+        System.out.println("Station Master: The next train out of here isn't for another hour...");
+        if (stationMasterInt >= 1) {
+            System.out.println("\nStation Master: I see you've met my friend the Librarian. I guess that means you " +
+                    "know" +
+                    " our secret...\n\nStation Master: Well I guess it wouldn't hurt to show you the way out of here " +
+                    "then...\n\nEnvironment: The Station Master pulls a lever on the station's control panel and a hatch " +
+                    "opens in the wall next to it, it leads to a dark train car.\n\nYou: Whoa-wha- the train is " +
+                    "leaving already?\n\n\t\t\t\tTHE END...");
+            System.exit(0);
+        }
         waitForEnter();
         railStation();
     }
 
-    public static void nationalNews() {
+    public static void nationalNews() { // done
         clear();
         // read national news, exits to rail station when dialogue ends
-        System.out.println("National News:\n(looks like theres nothing here yet)");
-        // TODO: 12/9/22 display news events based on number of times interacted with
+        System.out.println("National News:\nOn January 31, 1865, the 13th Amendment was passed by congress;.");
         // news board
-        System.out.println("\nLooks like that's all the news for today!");
         waitForEnter();
         railStation();
     }
@@ -234,7 +241,7 @@ public class EnglishProject {
             townSquare();
         }
     }
-    public static void bartender() {
+    public static void bartender() { // done
         clear();
         // talk to bartender, exits to tavern when convo ends
         System.out.println("You are now talking to the bartender:");
@@ -243,7 +250,7 @@ public class EnglishProject {
         waitForEnter();
         tavern();
     }
-    public static void barPatrons() {
+    public static void barPatrons() { // done
         clear();
         // talk to bar patrons, exits to tavern when convo ends
         int rand = (int) (Math.random() * 3) + 1;
@@ -258,32 +265,43 @@ public class EnglishProject {
         int randy = (int) (Math.random() * 3) + 1;
         String story;
         if (randy == 1) {
-            story = "I hear that old hag Gertrude ";
+            story = "I hear that old Gertrude has been telling some nasty tales about how dangerous those black " +
+                    "folk are.";
         } else if (randy == 2) {
-            story = "";
+            story = "Did ya know? Seems a lot of folk are complaining about having the Africans out in public now.";
         } else {
-            story = "";
+            story = "I've heard that there's a movement in the town hall to pass a new law to make slavery legal again.";
         }
         System.out.println("Now talking to " + patron);
         System.out.println(patron + ": " + story);
+        waitForEnter();
+        tavern();
     }
 
-    public static void postOffice() {
+    public static void postOffice() { // done
         clear();
         // news from nearby towns comes here first
         // read newspapers or read mail
-
+        System.out.println("You are now in the Post Office.");
+        System.out.println("Newspaper: Today, December 6, 1865, the 13th amendment to the American Constitution is " +
+                "ratified by a 3/4 majority of the states.");
+        waitForEnter();
+        mainStreetE();
     }
 
-    public static void generalStore() {
+    public static void generalStore() { // done
         clear();
         // nothing here yet, cosmetic building
-
+        System.out.println("You are in the General Store.\nThis is a cosmetic building. If you had brought money " +
+                "maybe you could buy some bread and milk...");
+        waitForEnter();
+        firstStreet();
     }
     public static void church() { // done
         clear();
         // talk to pastor or exit to west main st
-        System.out.println("You are now in the Church. You can talk to the Pastor (0) or exit to West Main Street (1)");
+        System.out.println("You are now in the Church. You can listen to the Pastor (TW: racism, white supremacist " +
+                "talk) (0) or exit to West Main Street (1)");
         int choice = 9;
         while (choice != 0 && choice != 1) {
             System.out.print("Environment: What would you like to do (0/1) -> ");
@@ -296,10 +314,14 @@ public class EnglishProject {
             mainStreetW();
         }
     }
-    public static void pastor() {
+    public static void pastor() { // done
         clear();
-
-
-
+        System.out.println("You are now talking to the Pastor.");
+        System.out.println("Pastor: We must eradicate the danger facing our nation. We all, gathered here today, we " +
+                "know that the Blacks invading our country are dangerous to us, because though they aren't real " +
+                "citizens, they do take away very real jobs and poison the minds of those they talk to with their " +
+                "ideas of racial equality.");
+        waitForEnter();
+        church();
     }
 }
