@@ -4,9 +4,10 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2022.12.31-0">
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.01.02-0">
+      <change afterPath="$PROJECT_DIR$/src/EnglishProject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EnglishProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EnglishProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manifest.txt" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -325,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672517348042</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="2023.01.02-0">
+      <created>1672693845136</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1672693845136</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,7 +349,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2022.10.17-0" />
     <MESSAGE value="2022.10.17-1" />
     <MESSAGE value="2022.10.24-0" />
     <MESSAGE value="2022.10.26-0" />
@@ -366,7 +373,8 @@
     <MESSAGE value="2022.12.15-0" />
     <MESSAGE value="2022.12.21-0" />
     <MESSAGE value="2022.12.31-0" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.12.31-0" />
+    <MESSAGE value="2023.01.02-0" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.01.02-0" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -1,4 +1,4 @@
-Main-Class: CoolJavaGames
-Manifest-Version: 1.1
-Created-By: Raeeeee "Tors-0"
+Main-Class: EnglishProject
+Manifest-Version: 1.0
+Created-By: Rae Johnston
 
