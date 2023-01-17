@@ -3,6 +3,7 @@ public class Circle {
     private double diameter;
     private double centerX;
     private double centerY;
+    private static int numCircles;
     /**
      * Constructs a Circle object
      * Precondition: radius must be a non-negative value
@@ -18,6 +19,7 @@ public class Circle {
         diameter = radius * 2;
         this.centerX = centerX;
         this.centerY = centerY;
+        numCircles++;
     }
 
     /**
@@ -33,6 +35,7 @@ public class Circle {
         diameter = radius * 2;
         centerX = 0;
         centerY = 0;
+        numCircles++;
     }
 
     /**
@@ -76,7 +79,7 @@ public class Circle {
      * {@code @date} 2023.01.04
      */
     public double getCircumference() {
-        return 2 * Math.PI * radius;
+        return Math.PI * diameter;
     }
 
     /**
@@ -119,13 +122,63 @@ public class Circle {
     }
 
     /**
-     * Deletes the passed Circle object
+     * Deletes the passed Circle object <br>
+     * !! NOT WORKING !!
      * @param circle Circle object to be deleted
      */
     public static void delete(Circle circle) {
+        circle.centerX = 0;
+        circle.centerY = 0;
+        circle.radius = 0;
+        circle.diameter = 0;
+        numCircles--;
         circle = null;
         System.gc();
     }
 
+    /**
+     * Gets number of Circle objects
+     * @return int number of Circles
+     */
+    public static int getNumCircles() {
+        return numCircles;
+    }
 
+    /**
+     * Sets radius to a new double value <br>
+     * Precondition: value must be greater than 0
+     * @param radius double radius
+     */
+    public void setRadius(double radius) {
+        if (radius >= 0) {
+            this.radius = radius;
+            diameter = radius * 2;
+        } else {
+            System.out.println("Error at Circle.setRadius.radius: Invalid input, use a number greater than 0");
+        }
+    }
+
+    /**
+     * Sets diameter to a new double value <br>
+     * Precondition: value must be greater than 0
+     * @param diameter double diameter
+     */
+    public void setDiameter(double diameter) {
+        if (diameter >= 0) {
+            this.diameter = diameter;
+            radius = diameter / 2;
+        } else {
+            System.out.println("Error at Circle.setDiameter.diameter: Invalid input, use a number greater than 0");
+        }
+    }
+
+    /**
+     * Changes the center coordinates of the circle
+     * @param centerX double coordinate X
+     * @param centerY double coordinate Y
+     */
+    public void setCenter(double centerX, double centerY) {
+        this.centerX = centerX;
+        this.centerY = centerY;
+    }
 }
