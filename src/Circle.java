@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Circle {
     private double radius;
     private double diameter;
@@ -180,5 +182,32 @@ public class Circle {
     public void setCenter(double centerX, double centerY) {
         this.centerX = centerX;
         this.centerY = centerY;
+    }
+
+    /**
+     * Compares two Circle objects based on area
+     * @param other Circle object to compare to
+     * @return <0.0 if this is larger than other<br>0.0 if equal<br>>0.0 if this is smaller than other
+     */
+    public double compareTo(Circle other) {
+        return this.getArea() - other.getArea();
+    }
+
+    /**
+     * Checks two Circle objects based on all params
+     * @param other Circle object to compare against
+     * @return true / false
+     */
+    public boolean equals(Circle other) {
+        if (this == other) return true;
+        if (!(this.radius == other.radius)) {
+            return false;
+        } else if (!(this.centerX == other.centerX)) {
+            return false;
+        } else if (!(this.centerY == other.centerY)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

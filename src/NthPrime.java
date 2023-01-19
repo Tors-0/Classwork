@@ -51,9 +51,6 @@ public class NthPrime {
                 foundPrimes++;
                 result = i;
             }
-            if (i % mod == 0) {
-                System.out.print(".");
-            }
         }
         return result;
     }
@@ -88,11 +85,11 @@ public class NthPrime {
                 "Which prime do you wish to find?\nWARNING: " +
                 "This may take several minutes depending on your computer! : ");
         String in = scanny.nextLine().replaceAll(",","");
-        System.out.print("Preprocessing... ");
-        long n = Integer.parseInt(in);
+        System.out.print("Pre-processing... ");
+        long n = Math.round(Float.parseFloat(in));
         long prime;
 
-        System.out.print("Done!\nSeeking");
+        System.out.print("Done!\nSeeking... ");
         double start = System.nanoTime();
         if (n < 1) prime = -1;
         else if (n == 1) prime = 2;
@@ -102,8 +99,12 @@ public class NthPrime {
         System.out.print("Done!\nPost-processing... ");
         String run = Functions.nsToTime(end - start);
         String evaluated = Functions.numToMil(evals);
+        double ratio = 1000000000.0 / (end - start);
+        double calcPerSec = evals * ratio;
         System.out.print("Done!\n");
-        System.out.println("\nFound " + prime + " in ~" + run);
-        System.out.println("Evaluated ~" + evaluated + " factors/numbers during runtime!");
+
+        System.out.println("\nFound the " + n + "th prime number, which is " + prime);
+        System.out.println("Evaluated ~" + evaluated + " factors in ~" + run + ".");
+        System.out.println("Calculation rate of ~" + Functions.numToMil(calcPerSec) + " calculations per second.");
     }
 }
