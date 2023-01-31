@@ -7,11 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.01.17-0">
-      <change afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.01.19-0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NthPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NthPrime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +65,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -80,27 +79,6 @@
       <recent name="C:\Users\Rae\IdeaProjects\Classwork\finch-lib" />
       <recent name="C:\Users\Rae\IdeaProjects\Classwork\src" />
     </key>
-  </component>
-  <component name="RunManager" selected="Application.NthPrime">
-    <configuration name="EnglishProject" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EnglishProject" />
-      <module name="Classwork" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NthPrime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="NthPrime" />
-      <module name="Classwork" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.NthPrime" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -356,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673976555777</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="2023.01.19-0">
+      <created>1674149398255</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1674149398255</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,7 +357,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2022.10.24-0" />
     <MESSAGE value="2022.10.26-0" />
     <MESSAGE value="2022.10.26-1" />
     <MESSAGE value="2022.11.3-0" />
@@ -397,7 +381,8 @@
     <MESSAGE value="2022.12.31-0" />
     <MESSAGE value="2023.01.02-0" />
     <MESSAGE value="2023.01.17-0" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.01.17-0" />
+    <MESSAGE value="2023.01.19-0" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.01.19-0" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
