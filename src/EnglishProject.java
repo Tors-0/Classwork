@@ -178,16 +178,22 @@ public class EnglishProject {
         clear();
         // talk to station master, exits to rail station when convo ends
         System.out.println("Station Master: The next train out of here isn't for another hour...");
+        waitForEnter();
         if (stationMasterInt >= 1) {
             System.out.println("\nStation Master: I see you've met my friend the Librarian. I guess that means you " +
                     "know" +
-                    " our secret...\n\nStation Master: Well I guess it wouldn't hurt to show you the way out of here " +
-                    "then...\n\nEnvironment: The Station Master pulls a lever on the station's control panel and a hatch " +
-                    "opens in the wall next to it, it leads to a dark train car.\n\nYou: Whoa-wha- the train is " +
-                    "leaving already?\n\n\t\t\t\tTHE END...");
+                    " our secret...\n");
+            waitForEnter();
+            System.out.println("Station Master: Well I guess it wouldn't hurt to show you the way out of here " +
+                    "then...\n");
+            waitForEnter();
+            System.out.println("Environment: The Station Master pulls a lever on the station's control panel and a hatch " +
+                    "opens in the wall next to it, it leads to a dark train car.\n");
+            waitForEnter();
+            System.out.println("You: Whoa-wha- the train is leaving already?\n\n\t\t\t\tTHE END...");
+            waitForEnter();
             System.exit(0);
         }
-        waitForEnter();
         railStation();
     }
 
