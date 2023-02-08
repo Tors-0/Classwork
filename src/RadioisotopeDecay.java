@@ -1,13 +1,11 @@
-public static Class RadioisotopeDecay{
+public class RadioisotopeDecay{
     static RadioParticle[] sample = new RadioParticle[100];
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             sample[i] = new RadioParticle();
         }
         while (checkIfAnyAlive()) {
-            if (checkIfAnyAlive()) {
-                ageAllUp();
-            }
+            ageAllUp();
         }
         summary();
     }
@@ -23,6 +21,7 @@ public static Class RadioisotopeDecay{
                 aliveCount++;
             }
         }
+        System.out.println("Current generation: " + sample[0].age + ",  Number of particles remaining: " + aliveCount);
         if (aliveCount > 0) return true;
         else return false;
     }
@@ -35,11 +34,11 @@ public static Class RadioisotopeDecay{
                 maxAge = sample[i].age;
             }
         }
-        double avgSurvived = totalSurvivedCount / 100;
-        System.out.println("Maximum Age Reached: " + maxAge + "\nAverage Age Reached: " avgSurvived);
+        double avgSurvived = totalSurvivedCount / 100.0;
+        System.out.println("Maximum Age Reached: " + maxAge + "\nAverage Age Reached: " + avgSurvived);
     }
 }
-Class RadioParticle() {
+class RadioParticle {
     protected int age = 0;
     private boolean alive = true;
     private int survivedCount = 0;
@@ -51,7 +50,7 @@ Class RadioParticle() {
     public void ageUp() {
         this.age += 1;
         if (this.alive) {
-            if (Math.random() > 0.5) {
+            if (Math.random() > 0.55) {
                 this.alive = false;
             }
             this.survivedCount++;
