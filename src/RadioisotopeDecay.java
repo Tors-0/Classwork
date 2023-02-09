@@ -50,7 +50,7 @@ class RadioParticle {
     public void ageUp() {
         this.age += 1;
         if (this.alive) {
-            if (Math.random() > 0.55) {
+            if (Math.random() < 0.5) {
                 this.alive = false;
             }
             this.survivedCount++;
