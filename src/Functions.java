@@ -260,4 +260,21 @@ public class Functions {
         System.out.println("avgStrings(\"raeeeee thorf\",\"unicorndave\",\"meowhuish dnd leopard\")");
         System.out.print(avgStrings("raeeeee thorf","unicorndave","meowhuish dnd leopard"));
     }
+    public static int squareArrayCount(int n) {
+        int[][] square = new int[n][n];
+        int count = 0;
+        for (int row = 0; row < square.length; row++) {
+            for (int column = 0; column < square[row].length; column++) {
+                square[row][column] = (int) Math.round(Math.random() * (n*n));
+            }
+        }
+        for (int[] z : square) {
+            for (int h : z) {
+                if (h % 2 == 1) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 }
