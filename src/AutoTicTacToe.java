@@ -1,9 +1,58 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
-public class TicTacToe {
+
+public class AutoTicTacToe {
     private static final Scanner in = new Scanner(System.in); // take user's input for where to play
     private static boolean isX = false; // keep track of which players turn it is
     private static char winner = ' '; // keep track of which player is winning during checkWin
     private static int turn = 1; // keep track of what turn it currently is
+    // stuff for persistent statistics
+    static File myObj = new File("autoTTTdata.txt");
+    private static void saveToFile(String data) {
+        try {
+            FileWriter myWriter = new FileWriter(myObj,true);
+            String text = "\n";
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+                text += "// This file is for Statistical tracking and debugging purposes, please do not " +
+                        "edit, delete, or move this file //";
+            } else {
+                System.out.println("Save file already exists.");
+            }
+            myWriter.append(text);
+            myWriter.append(data);
+            System.out.println("Successfully saved game data.");
+            myWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e);
+        }
+    }
+    public static void gameStats() {
+        try {
+            Scanner files = new Scanner(myObj);
+            int xWins = 0;
+            int oWins = 0;
+            int ties = 0;
+            while (files.hasNextLine()) {
+                String data = files.nextLine();
+                if (data.contains("Player X")) {
+                    xWins++;
+                } else if (data.contains("Player O")) {
+                    oWins++;
+                } else if (data.contains("Tie!")) {
+                    ties++;
+                }
+            }
+            double total = xWins + oWins + ties;
+            System.out.println("X Wins: " + xWins + " (~" + (xWins/total)*100.0 + "%)");
+            System.out.println("O Wins: " + oWins + " (~" + (oWins/total)*100.0 + "%)");
+            System.out.println("Ties: " + ties + " (~" + (ties/total)*100.0 + "%)");
+        } catch (FileNotFoundException ignored) {}
+    }
+    // end statistic stuff
     public static void main(String[] args) {
         char[][] board = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
         do {
@@ -15,9 +64,15 @@ public class TicTacToe {
         print(board);
         System.out.println();
         if (winner == 'X' || winner == 'O') {
-            System.out.println("Game Over!\nPlayer " + winner + " wins!");
+            String out = "Game Over!\nPlayer " + winner + " wins!";
+            System.out.println(out + "\n\n");
+            saveToFile(out);
+            gameStats();
         } else {
-            System.out.println("Game Over!\nTie!");
+            String out = "Game Over!\nTie!";
+            System.out.println(out + "\n\n");
+            saveToFile(out);
+            gameStats();
         }
     }
     /**
@@ -44,8 +99,8 @@ public class TicTacToe {
 
         //ask the user for the spot they want
         System.out.print("\nTurn " + turn + ": Player " + player + ", where would you like to go? > ");
-        int spot = in.nextInt();
-
+        int spot = (int) (Math.random() * 9) + 1;
+        System.out.println(spot);
         if (board[(spot-1) / 3][(spot - 1) % 3] != 'X' && board[(spot-1) / 3][(spot-1)%3] != 'O') {
             board[(spot - 1) / 3][(spot - 1) % 3] = player;
             turn++;
