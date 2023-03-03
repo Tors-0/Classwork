@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Testing {
@@ -11,15 +13,14 @@ public class Testing {
         return false;
     }
     public static void main(String[] args) {
-        double start = 2;
-        double end = 5;
-        int n = 100000;
-        double total = 0;
-        double width = (end - start) / n;
-        for (double i = start; i <= end; i += width) {
-            total += width * f(i);
+        ArrayList<Object> test = new ArrayList<>();
+        test.add("hello");
+        test.add(54);
+        test.add("world!");
+        test.add(new int[]{1, 2, 3});
+        for (Object o : test) {
+            System.out.println(o.toString());
         }
-        System.out.println(total);
     }
     public static double f(double x) {
         return (3 * x) + 5;

@@ -16,15 +16,16 @@ public class AutoTicTacToe {
             FileWriter myWriter = new FileWriter(myObj,true);
             String text = "\n";
             if (myObj.createNewFile()) {
+                myObj.createNewFile();
                 System.out.println("File created: " + myObj.getName());
-                text += "// This file is for Statistical tracking and debugging purposes, please do not " +
-                        "edit, delete, or move this file //";
+                myWriter.append("// This file is for Statistical tracking and debugging purposes, please do not " +
+                        "edit, delete, or move this file //");
             } else {
                 System.out.println("Save file already exists.");
             }
             myWriter.append(text);
             myWriter.append(data);
-            System.out.println("Successfully saved game data.");
+            System.out.println("Successfully saved game data.\n");
             myWriter.close();
         } catch (IOException e) {
             System.out.println("An error occurred: " + e);
@@ -35,7 +36,7 @@ public class AutoTicTacToe {
             Scanner files = new Scanner(myObj);
             int xWins = 0;
             int oWins = 0;
-            int ties = 0;
+            int tiesX = 0;
             while (files.hasNextLine()) {
                 String data = files.nextLine();
                 if (data.contains("Player X")) {
@@ -43,13 +44,13 @@ public class AutoTicTacToe {
                 } else if (data.contains("Player O")) {
                     oWins++;
                 } else if (data.contains("Tie!")) {
-                    ties++;
+                    tiesX++;
                 }
             }
-            double total = xWins + oWins + ties;
-            System.out.println("X Wins: " + xWins + " (~" + (xWins/total)*100.0 + "%)");
-            System.out.println("O Wins: " + oWins + " (~" + (oWins/total)*100.0 + "%)");
-            System.out.println("Ties: " + ties + " (~" + (ties/total)*100.0 + "%)");
+            double total = xWins + oWins + tiesX;
+            System.out.println("X Wins: " + xWins + " (~" + (Math.floor((xWins / total) * 10000) / 100.0) + "%)");
+            System.out.println("O Wins: " + oWins + " (~" + (Math.floor((oWins / total) * 10000) / 100.0) + "%)");
+            System.out.println("N Ties: " + tiesX + " (~" + (Math.floor((tiesX / total) * 10000) / 100.0) + "%)");
         } catch (FileNotFoundException ignored) {}
     }
     // end statistic stuff
@@ -63,17 +64,15 @@ public class AutoTicTacToe {
         turn = 10;
         print(board);
         System.out.println();
+        String out;
         if (winner == 'X' || winner == 'O') {
-            String out = "Game Over!\nPlayer " + winner + " wins!";
-            System.out.println(out + "\n\n");
-            saveToFile(out);
-            gameStats();
+            out = "Player " + winner + " wins!";
         } else {
-            String out = "Game Over!\nTie!";
-            System.out.println(out + "\n\n");
-            saveToFile(out);
-            gameStats();
+            out = "Tie!";
         }
+        System.out.println("Game Over!\n" + out + "\n\n");
+        saveToFile(out);
+        gameStats();
     }
     /**
      * Prints the game board
