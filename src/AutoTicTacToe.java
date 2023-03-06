@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AutoTicTacToe {
-    private static final Scanner in = new Scanner(System.in); // take user's input for where to play
     private static boolean isX = false; // keep track of which players turn it is
     private static char winner = ' '; // keep track of which player is winning during checkWin
     private static int turn = 1; // keep track of what turn it currently is
@@ -16,7 +15,6 @@ public class AutoTicTacToe {
             FileWriter myWriter = new FileWriter(myObj,true);
             String text = "\n";
             if (myObj.createNewFile()) {
-                myObj.createNewFile();
                 System.out.println("File created: " + myObj.getName());
                 myWriter.append("// This file is for Statistical tracking and debugging purposes, please do not " +
                         "edit, delete, or move this file //");
