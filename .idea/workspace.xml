@@ -4,12 +4,13 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.03.03-0">
-      <change afterPath="$PROJECT_DIR$/src/NthPrimeParalellProcessing.java" afterDir="false" />
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.03.02-0">
+      <change afterPath="$PROJECT_DIR$/src/Paralellization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TestPrime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoTTTdata.txt" beforeDir="false" afterPath="$PROJECT_DIR$/autoTTTdata.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AutoTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AutoTicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NthPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NthPrime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NthPrimeParalellProcessing.java" beforeDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -412,8 +413,8 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Classwork$NthPrime.ic" NAME="NthPrime Coverage Results" MODIFIED="1668833226587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Classwork$CoolJavaGames.ic" NAME="CoolJavaGames Coverage Results" MODIFIED="1667538710030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$Unit2Project.ic" NAME="Unit2Project Coverage Results" MODIFIED="1665675308804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Classwork$CoolJavaGames.ic" NAME="CoolJavaGames Coverage Results" MODIFIED="1667538710030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Classwork$NthPrime.ic" NAME="NthPrime Coverage Results" MODIFIED="1668833226587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

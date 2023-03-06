@@ -1,18 +1,13 @@
+
+Game Over!
 Player X wins!
-Player X wins!
-Player X wins!
-Player X wins!
-Player X wins!
+Game Over!
 Player O wins!
+Game Over!
 Player X wins!
+Game Over!
 Player O wins!
+Game Over!
+Player X wins!
+Game Over!
 Player O wins!
-Player X wins!
-Player X wins!
-Player X wins!
-Player O wins!
-Player O wins!
-Tie!
-Player X wins!
-Player O wins!
-Player X wins!

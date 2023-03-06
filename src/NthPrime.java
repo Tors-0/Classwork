@@ -1,4 +1,6 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.util.stream.*;
 
 public class NthPrime {
     static Scanner scanny = new Scanner(System.in);
@@ -27,27 +29,18 @@ public class NthPrime {
             return true;
         }
     }
-    public static long nthPrime(long seek, long foundPrimes, long start) {
+    public static long nthPrime(long seek) {
+        long foundPrimes = 1;
+        final long start = 3;
         // check every number 1 at a time until it finds n primes, has been changed to only check odd numbers to
         // increase speed, which contributed an additional 24.1% speed-up to the seeking process
         long result = -1;
-        long mod = seek / 10;
+        long mod = seek;
         for (long i = start; foundPrimes < seek; i++) {
             evals++;
             // only checks for factors from 1 to sqrt(n) instead of 1 to n
-            // provides exponential speed increase over fastPrimeCheck
-            boolean primality = true;
-            double max = Math.sqrt(i) + 1;
-            if (i % 2 != 0) {
-                for (long j = 3; j < max; j += 2) {
-                    evals++;
-                    if (i % j == 0) {
-                        primality = false;
-                        break;
-                    }
-                }
-            } else primality = false;
-            if (primality) {
+            // provides exponential speed increase over fastPrimeCheck\
+            if (isPrime(i)) {
                 foundPrimes++;
                 result = i;
             }
@@ -57,7 +50,21 @@ public class NthPrime {
         }
         return result;
     }
-    public static long bin100k(long seek, long found) {
+    public static boolean isPrime(long i) {
+        boolean primality = true;
+        double max = Math.sqrt(i) + 1;
+        if (i % 2 != 0) {
+            for (long j = 3; j < max; j += 2) {
+                evals++;
+                if (i % j == 0) {
+                    primality = false;
+                    break;
+                }
+            }
+        } else primality = false;
+        return primality;
+    }
+    /*public static long bin100k(long seek, long found) {
         // binning method that divides primes into bins of 100k primes to make seeking faster
         int[] a = {};
         if (seek < 100000) {
@@ -81,7 +88,7 @@ public class NthPrime {
         } else {
             return nthPrime(seek - 899999,found,13834103);
         }
-    }
+    }*/
     public static void main(String[] args) {
         // now 47.5% faster than the original code
         System.out.print(
@@ -94,16 +101,21 @@ public class NthPrime {
 
         System.out.print("Done!\nSeeking");
         double start = System.nanoTime();
-        if (n < 1) prime = -1;
+        if (n < 1) throw new IllegalArgumentException("Invalid input n: " + n);
         else if (n == 1) prime = 2;
-        else prime = nthPrime(n,1,3);
+        else prime = nthPrime(n);
         double end = System.nanoTime();
 
-        System.out.print("Done!\nPost-processing... ");
+        System.out.print(" Done!\nPost-processing... ");
         String run = Functions.nsToTime(end - start);
         String evaluated = Functions.numToMil(evals);
+        // TODO 06/03/2023: Replace ChatGPT code with original code
+        // Following code written by ChatGPT
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        String primed = formatter.format(prime);
+        // End ChatGPT code
         System.out.print("Done!\n");
-        System.out.println("\nFound " + prime + " in ~" + run);
+        System.out.println("\nFound " + primed + " in ~" + run);
         System.out.println("Evaluated ~" + evaluated + " factors/numbers during runtime!");
     }
 }
