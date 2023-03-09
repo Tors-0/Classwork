@@ -1,27 +1,46 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ArrayLists {
     public static void main(String[] args) {
-        ArrayList<Object> g = new ArrayList<>();
+        ArrayList<Integer> g = new ArrayList<>();
         for (int i = 0; i < 20; i ++) {
             g.add((int) (Math.random() * 1_000));
         }
         System.out.println(g);
-        for (int i = g.size()-1; i >= 0; i--) {
+        /*for (int i = g.size()-1; i >= 0; i--) {
             if (1 == (int) g.get(i) % 2) {
                 g.remove(i);
             }
         }
+        System.out.println(g);*/
+        sort(g);
         System.out.println(g);
     }
-    public static int indexOf(ArrayList<Object> ar, Object o) {
-        for (int i = 0; i < ar.size(); i++) {
-            if (ar.get(i).equals(o)) {
+    public static int indexOf(ArrayList<Object> arr, Object o) {
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i).equals(o)) {
                 return i;
             }
         }
         return -1;
+    }
+    public static void sort(ArrayList<Integer> arr) {
+        while (!isSorted(arr)) {
+            for (int i = 1; i < arr.size(); i++) {
+                if (arr.get(i) < arr.get(i-1)) {
+                    arr.set(i-1, arr.set(i, arr.get(i-1)));
+                }
+            }
+            System.out.println(arr);
+        }
+    }
+    public static boolean isSorted(ArrayList<Integer> arr) {
+        for (int i = 1; i < arr.size(); i++) {
+            if ((int) arr.get(i) < (int) (arr.get(i-1))) return false;
+        }
+        return true;
     }
     public static int mode(ArrayList<Integer> arr) {
         if (arr.size() == 0) return 0;
