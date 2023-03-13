@@ -6,7 +6,7 @@ public class ArrayLists {
     public static void main(String[] args) {
         ArrayList<Integer> g = new ArrayList<>();
         for (int i = 0; i < 20; i ++) {
-            g.add((int) (Math.random() * 1_000));
+            g.add((int) (Math.random() * 100));
         }
         System.out.println(g);
         /*for (int i = g.size()-1; i >= 0; i--) {
