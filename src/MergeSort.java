@@ -1,8 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import static java.util.Arrays.sort;
-
 
 //https://builtin.com/machine-learning/fastest-sorting-algorithm
 
