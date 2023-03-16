@@ -1,8 +1,11 @@
-package test;
+package sorting.test;
 
 import org.junit.Before;
 import org.junit.Test;
-import src.*;
+import sorting.src.Card;
+import sorting.src.Deck;
+import sorting.src.Rank;
+import sorting.src.Suit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

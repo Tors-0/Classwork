@@ -86,7 +86,7 @@ public class Game {
             }
         }
 
-        int index = deck.linearSearch(new Card(rank, suit));
+        int index = deck.binarySearch(new Card(rank, suit));
         if (index == -1) {
             System.out.println();
             System.out.println("Could not find card with rank " + rank +

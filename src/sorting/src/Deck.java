@@ -89,7 +89,12 @@ public class Deck {
      * @return index of target Card if Card is found, -1 if not found
      */
     public int linearSearch(Card target) {
-        // TODO: Implement linear search
+        int indexOf;
+        for (int i = 0; i < cards.size(); i++) {
+            if (cards.get(i).equals(target)) {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -101,11 +106,20 @@ public class Deck {
      */
     public int binarySearch(Card target) {
         // BONUS: Implement binary search
-        selectionSort();
-
+        return binaryHelper(target,0,cards.size());
+    }
+    public int binaryHelper(Card target, int l, int h) {
+        if (h-l <= 0) return -1;
+        if (cards.size() <= 0) return -1;
+        if (cards.get((h-l)/2 + l).compareTo(target) < 0) {
+            return binaryHelper(target, 1+l + (h-l) / 2,h);
+        } else if (cards.get((h-l)/2 + l).compareTo(target) > 0) {
+            return binaryHelper(target, l, l + (h-l) / 2);
+        } else if (cards.get(l + (h-l) / 2).equals(target)) {
+            return l + (h-l)/2;
+        }
         return -1;
     }
-
     /**
      * Performs selection sort on the cards in the Deck
      */

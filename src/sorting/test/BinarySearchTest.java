@@ -1,8 +1,9 @@
-package test;
+package sorting.test;
 
 import org.junit.Before;
 import org.junit.Test;
-import src.*;
+import sorting.src.Card;
+import sorting.src.Deck;
 
 import java.util.*;
 
