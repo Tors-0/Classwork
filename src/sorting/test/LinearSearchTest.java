@@ -2,8 +2,8 @@ package sorting.test;
 
 import org.junit.Before;
 import org.junit.Test;
-import sorting.src.Card;
-import sorting.src.Deck;
+import sorting.main.Card;
+import sorting.main.Deck;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotEquals;
 
 public class LinearSearchTest {
 
-    public static final int FULL_DECK = 56;
+    public static final int FULL_DECK = 52;
     public static final int TEST_SIZE = 20;
     private Random random;
 
@@ -69,7 +69,7 @@ public class LinearSearchTest {
 
     /**
      * Assert that searching for a Card in a full unsorted
-     * 56-card Deck returns the correct position of the
+     * 52-card Deck returns the correct position of the
      * Card, which is a non-zero integer.
      */
     @Test
@@ -244,7 +244,7 @@ public class LinearSearchTest {
 
     /**
      * Assert that searching for a Card in a full sorted
-     * 56-card Deck returns the correct position of the
+     * 52-card Deck returns the correct position of the
      * Card, which is a non-zero integer.
      */
     @Test

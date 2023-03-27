@@ -1,3 +1,5 @@
+package non_csa;
+
 import java.util.Scanner;
 
 public class ScientificConverter {

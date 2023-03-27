@@ -1,3 +1,5 @@
+package writingClasses;
+
 public class Circle {
     private double radius;
     private double diameter;
@@ -5,7 +7,7 @@ public class Circle {
     private double centerY;
     private static int numCircles;
     /**
-     * Constructs a Circle object
+     * Constructs a writingClasses.Circle object
      * Precondition: radius must be a non-negative value
      * Postcondition: every instance variable has a non-null value
      * @param radius double to initialize instance variable radius
@@ -23,7 +25,7 @@ public class Circle {
     }
 
     /**
-     * Constructs a Circle object
+     * Constructs a writingClasses.Circle object
      * <br>Precondition: radius must be a non-negative value
      * <br>Postcondition: every instance variable has a non-null value, center coordinates default to 0,0
      * @param radius double to initialize instance variable radius
@@ -40,8 +42,8 @@ public class Circle {
 
     /**
      * Getter for radius
-     * Precondition: Circle object must be not null
-     * @return double radius for Circle object
+     * Precondition: writingClasses.Circle object must be not null
+     * @return double radius for writingClasses.Circle object
      * @author Rae Johnston
      * {@code @date} 2023.01.04
      */
@@ -51,8 +53,8 @@ public class Circle {
 
     /**
      * Getter for diameter
-     * <br>Precondition: Circle object must be not null
-     * @return double diameter of Circle object
+     * <br>Precondition: writingClasses.Circle object must be not null
+     * @return double diameter of writingClasses.Circle object
      * @author Rae Johnston
      * {@code @date} 2023.01.04
      */
@@ -62,8 +64,8 @@ public class Circle {
 
     /**
      * Getter for area
-     * <br>Precondition: Circle object must be not null
-     * @return double area of Circle object
+     * <br>Precondition: writingClasses.Circle object must be not null
+     * @return double area of writingClasses.Circle object
      * @author Rae Johnston
      * {@code @date} 2023.01.04
      */
@@ -73,8 +75,8 @@ public class Circle {
 
     /**
      * Getter for circumference
-     * <br>Precondition: Circle object must be not null
-     * @return double circumference of Circle object
+     * <br>Precondition: writingClasses.Circle object must be not null
+     * @return double circumference of writingClasses.Circle object
      * @author Rae Johnston
      * {@code @date} 2023.01.04
      */
@@ -84,8 +86,8 @@ public class Circle {
 
     /**
      * Getter for center coordinates
-     * <br>Precondition: Circle object must be not null
-     * @return double[] coordinates of Circle object's center
+     * <br>Precondition: writingClasses.Circle object must be not null
+     * @return double[] coordinates of writingClasses.Circle object's center
      * @author Rae Johnston
      * {@code @date} 2023.01.04
      */
@@ -97,8 +99,8 @@ public class Circle {
     }
 
     /**
-     * Getter for edge coordinates of Circle object
-     * <br>Precondition: Circle object must be not null
+     * Getter for edge coordinates of writingClasses.Circle object
+     * <br>Precondition: writingClasses.Circle object must be not null
      * @param radians should be double from 0 to 2 * PI
      * @return double[] coordinates at given angle
      * @author Rae Johnston
@@ -122,9 +124,9 @@ public class Circle {
     }
 
     /**
-     * Deletes the passed Circle object <br>
+     * Deletes the passed writingClasses.Circle object <br>
      * !! NOT WORKING !!
-     * @param circle Circle object to be deleted
+     * @param circle writingClasses.Circle object to be deleted
      */
     public static void delete(Circle circle) {
         circle.centerX = 0;
@@ -137,7 +139,7 @@ public class Circle {
     }
 
     /**
-     * Gets number of Circle objects
+     * Gets number of writingClasses.Circle objects
      * @return int number of Circles
      */
     public static int getNumCircles() {
@@ -154,7 +156,7 @@ public class Circle {
             this.radius = radius;
             diameter = radius * 2;
         } else {
-            System.out.println("Error at Circle.setRadius.radius: Invalid input, use a number greater than 0");
+            System.out.println("Error at writingClasses.Circle.setRadius.radius: Invalid input, use a number greater than 0");
         }
     }
 
@@ -168,7 +170,7 @@ public class Circle {
             this.diameter = diameter;
             radius = diameter / 2;
         } else {
-            System.out.println("Error at Circle.setDiameter.diameter: Invalid input, use a number greater than 0");
+            System.out.println("Error at writingClasses.Circle.setDiameter.diameter: Invalid input, use a number greater than 0");
         }
     }
 
@@ -183,8 +185,8 @@ public class Circle {
     }
 
     /**
-     * Compares two Circle objects based on area
-     * @param other Circle object to compare to
+     * Compares two writingClasses.Circle objects based on area
+     * @param other writingClasses.Circle object to compare to
      * @return <0.0 if this is larger than other<br>0.0 if equal<br>>0.0 if this is smaller than other
      */
     public double compareTo(Circle other) {
@@ -192,8 +194,8 @@ public class Circle {
     }
 
     /**
-     * Checks two Circle objects based on all params
-     * @param other Circle object to compare against
+     * Checks two writingClasses.Circle objects based on all params
+     * @param other writingClasses.Circle object to compare against
      * @return true / false
      */
     public boolean equals(Circle other) {

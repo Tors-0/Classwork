@@ -1,11 +1,11 @@
-package sorting.src;
+package sorting.main;
 
 import java.util.Collections;
 import java.util.Scanner;
 
 public class Game {
     // Feel free to change this value. Maximum value of DECK_SIZE must be 56.
-    public static final int DECK_SIZE = 5;
+    public static final int DECK_SIZE = 15;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -55,7 +55,7 @@ public class Game {
     public static void search(Scanner scanner, Deck deck) {
         System.out.println();
         System.out.println("What is the rank of the card to search for?");
-        System.out.print("Choose one rank - ACE, ONE, TWO, THREE, FOUR, FIVE, " +
+        System.out.print("Choose one rank - ACE, TWO, THREE, FOUR, FIVE, " +
                            "SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING: ");
         String choice = scanner.next();
 

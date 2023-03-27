@@ -1,4 +1,4 @@
-package sorting.src;
+package sorting.main;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -110,15 +110,17 @@ public class Deck {
     }
     public int binaryHelper(Card target, int l, int h) {
         if (h-l <= 0) return -1;
-        if (cards.size() <= 0) return -1;
-        if (cards.get((h-l)/2 + l).compareTo(target) < 0) {
-            return binaryHelper(target, 1+l + (h-l) / 2,h);
-        } else if (cards.get((h-l)/2 + l).compareTo(target) > 0) {
-            return binaryHelper(target, l, l + (h-l) / 2);
-        } else if (cards.get(l + (h-l) / 2).equals(target)) {
-            return l + (h-l)/2;
+        if (cards.size() == 0) return -1;
+        int m = (h-l)/2 + l;
+        if (cards.get(m).compareTo(target) < 0) {
+            return binaryHelper(target, m+1,h);
+        } else if (cards.get(m).compareTo(target) > 0) {
+            return binaryHelper(target, l, m);
+        } else if (cards.get(m).equals(target)) {
+            return m;
+        } else {
+            return -1;
         }
-        return -1;
     }
     /**
      * Performs selection sort on the cards in the Deck
@@ -131,7 +133,7 @@ public class Deck {
                     minIndex = j;
                 }
             }
-            Collections.swap(cards,i,minIndex);
+            Collections.swap(cards,minIndex,i);
         }
     }
 
@@ -140,7 +142,18 @@ public class Deck {
      */
     public void insertionSort() {
         // TODO: Implement insertion sort
-
+        for (int j = 0; j < cards.size(); j++) {
+            // assume that the first value is the smallest value
+            int minIn = -3;
+            for (int i = j; i >= 0; i--) {
+                if (cards.get(i).compareTo(cards.get(j)) < 0) {
+                    minIn = i+1;
+                    break;
+                }
+            }
+            if (minIn == -3) minIn = 0;
+            cards.add(minIn,cards.remove(j));
+        }
     }
 
     /**

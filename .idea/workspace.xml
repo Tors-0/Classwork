@@ -4,12 +4,18 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.03.16-1">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.03.16-2">
+      <change afterPath="$PROJECT_DIR$/src/inheritance/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Classwork.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sorting/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sorting/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnglishProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/EnglishProject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EnglishProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/EnglishProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RadioisotopeDecay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/RadioisotopeDecay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScientificConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/ScientificConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sorting/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/main/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sorting/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/main/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sorting/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sorting/src/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/main/Rank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sorting/src/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/main/Suit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sorting/test/BinarySearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/test/BinarySearchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sorting/test/InsertionSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/test/InsertionSortTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sorting/test/LinearSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/test/LinearSearchTest.java" afterDir="false" />
@@ -37,6 +43,11 @@
         <option value="master" />
       </list>
     </option>
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="InsertionSortTest" />
+    </enabled-run-configurations>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -402,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678984236578</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="2023.03.16-2">
+      <created>1678987033025</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1678987033025</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -418,7 +436,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2022.11.5-0 game data saved to file" />
     <MESSAGE value="2022.11.5-1" />
     <MESSAGE value="2022.11.7-1" />
     <MESSAGE value="2022.11.9-0" />
@@ -443,7 +460,8 @@
     <MESSAGE value="2023.03.13-0" />
     <MESSAGE value="2023.03.16-0" />
     <MESSAGE value="2023.03.16-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.03.16-1" />
+    <MESSAGE value="2023.03.16-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.03.16-2" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -461,5 +479,8 @@
     <SUITE FILE_PATH="coverage/Classwork$Unit2Project.ic" NAME="Unit2Project Coverage Results" MODIFIED="1665675308804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$CoolJavaGames.ic" NAME="CoolJavaGames Coverage Results" MODIFIED="1667538710030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$NthPrime.ic" NAME="NthPrime Coverage Results" MODIFIED="1668833226587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Classwork$SelectionSortTest.ic" NAME="SelectionSortTest Coverage Results" MODIFIED="1679328671711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sorting.test.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package sorting.src;
+package sorting.main;
 
 public enum Suit {
     CLUBS,

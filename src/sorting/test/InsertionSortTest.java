@@ -2,10 +2,10 @@ package sorting.test;
 
 import org.junit.Before;
 import org.junit.Test;
-import sorting.src.Card;
-import sorting.src.Deck;
-import sorting.src.Rank;
-import sorting.src.Suit;
+import sorting.main.Card;
+import sorting.main.Deck;
+import sorting.main.Rank;
+import sorting.main.Suit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -143,7 +143,7 @@ public class InsertionSortTest {
      */
     @Test
     public void unsortedFullDeckSortTest() {
-        Deck deck = new Deck(56);
+        Deck deck = new Deck(52);
         Deck sortedDeck = Deck.fullSortedDeck();
 
         deck.insertionSort();

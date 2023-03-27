@@ -1,3 +1,5 @@
+package non_csa;
+
 public class RadioisotopeDecay{
     static RadioParticle[] sample = new RadioParticle[100];
     public static void main(String[] args) {

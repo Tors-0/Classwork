@@ -1,3 +1,5 @@
+package writingClasses;
+
 public class ClassesPractice {
     public static void main(String[] args) {
         int num = 273647674;
