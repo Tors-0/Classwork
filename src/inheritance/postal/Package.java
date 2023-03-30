@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance.postal;
 
 public class Package extends Mail {
     private double volume;

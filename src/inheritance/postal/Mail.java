@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance.postal;
 
 public class Mail {
     private double weight;
@@ -14,49 +14,39 @@ public class Mail {
         this.deliveryInstructions = deliveryInstructions;
     }
 
-    public void updateDelivery(String newInstructions) {
-        deliveryInstructions = newInstructions;
+    public void updateDelivery(String instructions) {
+        deliveryInstructions = instructions;
     }
     public String checkInstructions() {
         return deliveryInstructions;
     }
-
     public void setWeight(double weight) {
         this.weight = weight;
     }
-
     public void setReturnAddress(String returnAddress) {
         this.returnAddress = returnAddress;
     }
-
     public void setEstDaysToDelivery(double estDaysToDelivery) {
         this.estDaysToDelivery = estDaysToDelivery;
     }
-
     public void setDestAddress(String destAddress) {
         this.destAddress = destAddress;
     }
-
     public void setDeliveryInstructions(String deliveryInstructions) {
         this.deliveryInstructions = deliveryInstructions;
     }
-
     public String getReturnAddress() {
         return returnAddress;
     }
-
     public String getDeliveryInstructions() {
         return deliveryInstructions;
     }
-
     public double getEstDaysToDelivery() {
         return estDaysToDelivery;
     }
-
     public String getDestAddress() {
         return destAddress;
     }
-
     public double getWeight() {
         return weight;
     }
