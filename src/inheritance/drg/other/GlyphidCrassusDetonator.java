@@ -1,4 +1,4 @@
-package inheritance.drg;
+package inheritance.drg.other;
 
 public class GlyphidCrassusDetonator extends GlyphidBulkDetonator {
     public GlyphidCrassusDetonator(double h, double t, double mH, double d) {

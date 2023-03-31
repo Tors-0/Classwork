@@ -1,4 +1,6 @@
-package inheritance.drg;
+package inheritance.drg.other;
+
+import inheritance.drg.project.Bug;
 
 public class Naedocyte extends Bug {
     /**

@@ -8,36 +8,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.03.30-0">
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/Bug.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/Glyphid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidBulkDetonator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidCrassusDetonator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnought.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnoughtArbalest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnoughtHiveguard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnoughtLacerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidExploder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidGrunt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidGruntGuard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidGruntSlasher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidSentinel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidSpawn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/GlyphidSwarmer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/Mactera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/MacteraBrundle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/MacteraGrabber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/MacteraSpawn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/MacteraTriJaw.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/Naedocyte.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/NaedocyteBreeder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/inheritance/postal/Envelope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inheritance/drg/project/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Classwork.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArrayLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/ArrayLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inheritance/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/postal/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inheritance/Envelope.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inheritance/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/postal/Mail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inheritance/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/postal/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/Bug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/project/Bug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/Glyphid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/project/Glyphid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidBulkDetonator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidBulkDetonator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidCrassusDetonator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidCrassusDetonator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidDreadnought.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnoughtArbalest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidDreadnoughtArbalest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnoughtHiveguard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidDreadnoughtHiveguard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidDreadnoughtLacerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidDreadnoughtLacerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidExploder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidExploder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidGrunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/project/GlyphidGrunt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidGruntGuard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidGruntGuard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidGruntSlasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidGruntSlasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidSentinel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidSentinel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidSpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/GlyphidSwarmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/GlyphidSwarmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/Mactera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/Mactera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/MacteraBrundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/MacteraBrundle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/MacteraGrabber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/MacteraGrabber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/MacteraSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/MacteraSpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/MacteraTriJaw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/MacteraTriJaw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/Naedocyte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/Naedocyte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/NaedocyteBreeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/other/NaedocyteBreeder.java" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -431,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678987033025</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="2023.03.30-0">
+      <created>1680195851531</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1680195851531</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

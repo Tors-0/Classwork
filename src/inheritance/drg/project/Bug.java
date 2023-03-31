@@ -1,4 +1,4 @@
-package inheritance.drg;
+package inheritance.drg.project;
 
 public class Bug {
     private double health;
@@ -75,6 +75,14 @@ public class Bug {
         else if (temperature > 100) {
             isBurning = true;
             isFrozen = false;
+        }
+    }
+
+    public int vampireKill(int vampLevel) {
+        if (getSize().equals("medium") || getSize().equals("large")) {
+            return vampLevel + 1;
+        } else {
+            return 0;
         }
     }
 }

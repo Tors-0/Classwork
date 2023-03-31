@@ -1,4 +1,6 @@
-package inheritance.drg;
+package inheritance.drg.other;
+
+import inheritance.drg.project.Glyphid;
 
 public class GlyphidDreadnought extends Glyphid {
 

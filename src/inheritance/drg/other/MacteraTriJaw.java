@@ -1,4 +1,4 @@
-package inheritance.drg;
+package inheritance.drg.other;
 
 public class MacteraTriJaw extends Mactera {
     /**

@@ -1,4 +1,4 @@
-package inheritance.drg;
+package inheritance.drg.other;
 
 public class GlyphidDreadnoughtLacerator extends GlyphidDreadnought {
     public GlyphidDreadnoughtLacerator(double d) {

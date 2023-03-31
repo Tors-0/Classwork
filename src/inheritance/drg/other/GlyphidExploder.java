@@ -1,4 +1,6 @@
-package inheritance.drg;
+package inheritance.drg.other;
+
+import inheritance.drg.project.Glyphid;
 
 public class GlyphidExploder extends Glyphid {
     public GlyphidExploder(double h, double t, double mH, double d) {
