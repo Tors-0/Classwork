@@ -2,8 +2,17 @@ package inheritance.drg.project;
 
 public class GlyphidGrunt extends Glyphid {
     private boolean isSteeve = false; // glyphid grunts can be tamed to become Steeve, who is friendly
+
+
+    /**
+     * Creates a glyphid grunt without freeze and burn temp
+     * @param h starting health of the grunt
+     * @param t starting temperature of the grunt
+     * @param mH max health of the grunt
+     * @param d damage dealt by grunt
+     */
     public GlyphidGrunt(double h, double t, double mH, double d) {
-        super(h, t, mH, d);
+        super(h, t, mH, d, -30, 30, "medium");
     }
 
     /**
@@ -25,13 +34,35 @@ public class GlyphidGrunt extends Glyphid {
      */
     @Override
     public int vampireKill(int vampLevel) {
-        if (isSteeve) return 0; // killing a friendly creature returns no vampire points
+        if (isSteeve) {
+            setHealth(0);
+            return 0; // killing a friendly creature returns no vampire points
+        }
         else {
             if (getSize().equals("medium") || getSize().equals("large")) {
+                setHealth(0);
                 return vampLevel + 1;
             } else {
+                setHealth(0);
                 return 0;
             }
         }
+    }
+
+    /**
+     * lets you gain health from killing steeve (why would you do this)
+     * @param vampLevel level of player's vampire perk
+     * @return amount of HP gained from said kill
+     */
+    public int vampKillIgnoreSteeve(int vampLevel) {
+        return super.vampireKill(vampLevel);
+    }
+
+    /**
+     * Prints out status of current object
+     * @return
+     */
+    public String toString() {
+        return super.toString() + ", isSteeve=" + isSteeve;
     }
 }
