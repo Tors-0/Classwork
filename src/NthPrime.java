@@ -1,6 +1,7 @@
+import tools.Functions;
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
-import java.util.stream.*;
 
 public class NthPrime {
     static Scanner scanny = new Scanner(System.in);

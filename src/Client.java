@@ -1,3 +1,5 @@
+import tools.Functions;
+
 import java.util.HashMap;
 
 public class Client {
