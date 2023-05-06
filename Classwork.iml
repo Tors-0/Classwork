@@ -10,6 +10,8 @@
       <excludeFolder url="file://$MODULE_DIR$/finch-lib" />
       <excludeFolder url="file://$MODULE_DIR$/src/com/birdbraintechnologies" />
       <excludeFolder url="file://$MODULE_DIR$/src/com" />
+      <excludeFolder url="file://$MODULE_DIR$/src/sorting/test" />
+      <excludeFolder url="file://$MODULE_DIR$/src/inheritance/drg" />
     </content>
     <content url="file://$MODULE_DIR$/out" />
     <orderEntry type="inheritedJdk" />

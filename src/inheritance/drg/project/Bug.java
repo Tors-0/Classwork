@@ -41,6 +41,13 @@ public class Bug {
         size = s;
     }
 
+    public Bug() {
+        maxHealth = 1;
+        health = 1;
+        temperature = 0;
+        damage = 1;
+    }
+
     public boolean isAlive() {
         return isAlive;
     }
