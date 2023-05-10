@@ -8,12 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.03.30-2">
-      <change afterPath="$PROJECT_DIR$/src/non_csa/root2powerroot2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/non_csa/shuffler/Shuffler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/non_csa/shuffler/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Classwork.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inheritance/drg/project/Bug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inheritance/drg/project/Bug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/WindowInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/WindowInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/non_csa/root2powerroot2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/root2powerroot2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/non_csa/shuffler/Shuffler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/shuffler/Shuffler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/non_csa/shuffler/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/shuffler/Song.java" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -484,8 +482,8 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Classwork$NthPrime.ic" NAME="NthPrime Coverage Results" MODIFIED="1668833226587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$CoolJavaGames.ic" NAME="CoolJavaGames Coverage Results" MODIFIED="1667538710030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Classwork$NthPrime.ic" NAME="NthPrime Coverage Results" MODIFIED="1668833226587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$Unit2Project.ic" NAME="Unit2Project Coverage Results" MODIFIED="1665675308804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Classwork$SelectionSortTest.ic" NAME="SelectionSortTest Coverage Results" MODIFIED="1679328671711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sorting.test.*</FILTER>

@@ -10,7 +10,7 @@ public class root2powerroot2 {
                             return Math.sqrt(2);
                         }
                     }
-                    
+
                 """;
         System.out.println(out);
         System.out.println(theThing(0));
