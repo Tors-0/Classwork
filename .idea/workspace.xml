@@ -7,11 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.03.30-2">
-      <change beforePath="$PROJECT_DIR$/src/game/WindowInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/WindowInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/non_csa/root2powerroot2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/root2powerroot2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/non_csa/shuffler/Shuffler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/shuffler/Shuffler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/non_csa/shuffler/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/shuffler/Song.java" afterDir="false" />
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.05.10-0">
+      <change afterPath="$PROJECT_DIR$/src/non_csa/coffeeMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/non_csa/ScientificConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/ScientificConverter.java" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -426,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680229643511</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="2023.05.10-0">
+      <created>1683731467411</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1683731467411</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,7 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2022.11.9-1" />
     <MESSAGE value="2022.11.17-1" />
     <MESSAGE value="2022.11.17-2" />
     <MESSAGE value="2022.11.29-0" />
@@ -467,7 +472,8 @@
     <MESSAGE value="2023.03.29-0" />
     <MESSAGE value="2023.03.30-0" />
     <MESSAGE value="2023.03.30-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.03.30-2" />
+    <MESSAGE value="2023.05.10-0" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023.05.10-0" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
