@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.05.10-0">
-      <change afterPath="$PROJECT_DIR$/src/non_csa/coffeeMaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/non_csa/ScientificConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/ScientificConverter.java" afterDir="false" />
     </list>
@@ -27,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
@@ -86,6 +86,19 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

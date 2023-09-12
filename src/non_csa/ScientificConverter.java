@@ -6,27 +6,29 @@ public class ScientificConverter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         double myNumber;
-        int sigs;
+        int sigfigs;
         int counter = 0;
         System.out.print("What number would you like to convert: ");
         myNumber = input.nextDouble();
         System.out.print("How many sigfigs does your number have: ");
-        sigs = input.nextInt();
-        if (myNumber >= 10) {
-            while (myNumber >= 10) {
-                myNumber /= 10.0;
+        sigfigs = input.nextInt();
+        if (myNumber >= 10d) {
+            while (myNumber >= 10d) {
+                myNumber /= 10.0d;
                 counter++;
             }
-        }else if (myNumber <= 1) {
-            while (myNumber <= 1) {
-                myNumber *= 10.0;
+        }else if (myNumber <= 1d) {
+            while (myNumber <= 1d) {
+                myNumber *= 10.0d;
                 counter--;
             }
         }
         // start factor in sigfigs
         double factor = 1;
-        factor = factor * Math.pow(10, sigs-1);
-        myNumber = (double) Math.round(myNumber * factor) / factor;
+        factor *= Math.pow(10, sigfigs-1);
+        if (sigfigs != 0) {
+            myNumber = (double) Math.round(myNumber * factor) / factor;
+        }
         // end sigfig calculation
         String finalCounter = Integer.toString(counter); //superscript(Integer.toString(counter));
         System.out.println(myNumber + "e" + finalCounter + " |or| " + myNumber + " x 10" + superscript(Integer.toString(counter)));
