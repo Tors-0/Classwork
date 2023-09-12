@@ -9,7 +9,7 @@ public class AutoTicTacToe {
     private static char winner = ' '; // keep track of which player is winning during checkWin
     private static int turn = 1; // keep track of what turn it currently is
     // stuff for persistent statistics
-    static File myObj = new File("autoTTTData.txt");
+    static File myObj = new File("autoTTTdata.txt");
     private static void saveToFile(String data) {
         try {
             FileWriter myWriter = new FileWriter(myObj,true);

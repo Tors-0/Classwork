@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="apache-log4j-extras-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/finch-lib/apache-log4j-extras-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/cmu_us_kal.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/commons-lang-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/commons-lang3-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-audio.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-device.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-serial.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-speech.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-user-interface.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/create-lab-commons-xml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/en_us.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/freetts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/hid4java.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/slf4j-nop-1.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/swing-layout-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/terk-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/finch-lib/terk-services.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,5 +1,6 @@
 package writingClasses;
 
+import org.jetbrains.annotations.NotNull;
 
 public class Sphere {
     private final double radius;
@@ -8,7 +9,7 @@ public class Sphere {
         radius = theRadius;
         diameter = theRadius * 2;
     }
-    public Sphere(Circle c) {
+    public Sphere(@NotNull Circle c) {
         radius = c.getRadius();
         diameter = c.getDiameter();
     }
