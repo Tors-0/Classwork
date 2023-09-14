@@ -28,6 +28,9 @@ public class ScientificConverter {
         factor *= Math.pow(10, sigfigs-1);
         if (sigfigs != 0) {
             myNumber = (double) Math.round(myNumber * factor) / factor;
+        } else {
+            factor = 1_000_000_000;
+            myNumber = (double) Math.round(myNumber * factor) / factor;
         }
         // end sigfig calculation
         String finalCounter = Integer.toString(counter); //superscript(Integer.toString(counter));

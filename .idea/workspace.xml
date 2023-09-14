@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="2023.05.10-0">
+    <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="refining zero-sigfig case">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/non_csa/ScientificConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/ScientificConverter.java" afterDir="false" />
     </list>
@@ -27,13 +27,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="master" />
-      </list>
-    </option>
   </component>
   <component name="JavaAutoRunManager">
     <enabled-run-configurations>
@@ -445,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683731467411</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="refining zero-sigfig case">
+      <created>1694534967579</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1694534967579</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +461,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2022.11.17-1" />
     <MESSAGE value="2022.11.17-2" />
     <MESSAGE value="2022.11.29-0" />
     <MESSAGE value="2022.12.06-0" />
@@ -486,7 +485,8 @@
     <MESSAGE value="2023.03.30-0" />
     <MESSAGE value="2023.03.30-2" />
     <MESSAGE value="2023.05.10-0" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023.05.10-0" />
+    <MESSAGE value="refining zero-sigfig case" />
+    <option name="LAST_COMMIT_MESSAGE" value="refining zero-sigfig case" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
