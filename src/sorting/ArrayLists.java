@@ -5,9 +5,9 @@ import java.util.HashMap;
 
 public class ArrayLists {
     public static void main(String[] args) {
-        ArrayList<Integer> g = new ArrayList<>();
+        ArrayList<Double> g = new ArrayList<>();
         for (int i = 0; i < 20; i ++) {
-            g.add((int) (Math.random() * 100));
+            g.add((double) (Math.random() * 100));
         }
         System.out.println(g);
         /*for (int i = g.size()-1; i >= 0; i--) {
@@ -27,7 +27,7 @@ public class ArrayLists {
         }
         return -1;
     }
-    public static void sort(ArrayList<Integer> arr) {
+    public static void sort(ArrayList<Double> arr) {
         while (!isSorted(arr)) {
             for (int i = 1; i < arr.size(); i++) {
                 if (arr.get(i) < arr.get(i-1)) {
@@ -37,24 +37,24 @@ public class ArrayLists {
             System.out.println(arr);
         }
     }
-    public static boolean isSorted(ArrayList<Integer> arr) {
+    public static boolean isSorted(ArrayList<Double> arr) {
         for (int i = 1; i < arr.size(); i++) {
-            if ((int) arr.get(i) < (int) (arr.get(i-1))) return false;
+            if ((double) arr.get(i) < (double) (arr.get(i-1))) return false;
         }
         return true;
     }
-    public static int mode(ArrayList<Integer> arr) {
+    public static double mode(ArrayList<Double> arr) {
         if (arr.size() == 0) return 0;
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i : arr) {
+        HashMap<Double, Double> map = new HashMap<>();
+        for (double i : arr) {
             if (map.containsKey(i)) {
                 map.put(i, map.get(i) + 1);
             } else {
-                map.put(i, 1);
+                map.put(i, 1d);
             }
         }
-        final int[] mode = {0};
-        final int[] modeNum = {0};
+        final double[] mode = {0};
+        final double[] modeNum = {0};
         map.forEach((k, v) -> {
             if (v > modeNum[0]) {
                 mode[0] = k;
