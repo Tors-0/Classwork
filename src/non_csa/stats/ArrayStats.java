@@ -55,4 +55,13 @@ public class ArrayStats {
         double[] h2 = Arrays.copyOfRange(list,min,list.length);
         return median(h2);
     }
+    public double iqr() {
+        return q3() - q1();
+    }
+    public int n() {
+        return list.length;
+    }
+    public String data() {
+        return Arrays.toString(list);
+    }
 }
