@@ -8,11 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="069a6325-d7bd-4d27-b0e6-3bd3119b0382" name="Changes" comment="fix zero-sig rounding error by adding max sigfig count">
-      <change afterPath="$PROJECT_DIR$/src/non_csa/stats/ArrayStats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/non_csa/stats/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sorting/ArrayLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting/ArrayLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/non_csa/stats/ArrayStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/stats/ArrayStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/non_csa/stats/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/non_csa/stats/Client.java" afterDir="false" />
     </list>
     <list id="0c03e3c0-ddba-4d57-b8ea-68a1b129fe67" name="Changes by Lewis" comment="" />
     <option name="SHOW_DIALOG" value="false" />

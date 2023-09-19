@@ -15,6 +15,11 @@ public class ArrayStats {
                 (list[(int) (list.length/2) - 1] + list[(int) (list.length/2)])/2.0;
         return med;
     }
+    private double median(double[] arr) {
+        return arr.length % 2 == 1
+                ? arr[(int) (arr.length / 2)]:
+                (arr[(int) (arr.length/2) - 1] + arr[(int) (arr.length/2)])/2.0;
+    }
     public double mean() {
         double mean = 0;
         for (double d : list) {
@@ -31,27 +36,23 @@ public class ArrayStats {
     public double q1() {
         int max;
         if (list.length % 2 == 1) {
+            // odd length case
             max = list.length/2;
         } else {
-            max = (list.length/2) - 1;
+            // even length case
+            max = (list.length/2);
         }
-        if (max % 2 == 1) {
-            return list[(int) (max / 2)];
-        } else {
-            return (list[(int) (max/2) - 1] + list[(int) (max/2)])/2.0;
-        }
+        double[] h1 = Arrays.copyOfRange(list,0,max);
+        return median(h1);
     }
     public double q3() {
         int min;
         if (list.length % 2 == 1) {
-            min = list.length/2;
+            min = (list.length/2) + 1;
         } else {
-            min = (list.length/2) - 1;
+            min = (list.length/2);
         }
-        if ((list.length - min) % 2 == 1) {
-            return list[min + (int) (min / 2)];
-        } else {
-            return (list[min + (int) (min/2) - 1] + list[min + (int) (min/2)])/2.0;
-        }
+        double[] h2 = Arrays.copyOfRange(list,min,list.length);
+        return median(h2);
     }
 }
